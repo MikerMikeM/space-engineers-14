@@ -1,0 +1,255 @@
+#region Glass
+
+# Modern Glass Assemblies
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySecurityGlassOld
+  suffix: Security, Glass
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/secairlockredglass.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyRepresentativeGlass
+  suffix: Sr
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/representative.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyGlass
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/basic_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyGlassOld
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyGlassOldWide
+  suffix:
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/big_glass_old.rsi
+    state: "assembly"
+    snapCardinals: false
+    offset: 0.5,0
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,1.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - GlassAirlockLayer
+
+# Vintage Glass Assemblies
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyMedical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/medical_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyScience
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/science_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyCommand
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/command_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblySecurity
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/security_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyMaint
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/maint_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyEngineering
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/engineering_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyAtmospherics
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/atmospherics_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyCargo
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/cargo_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblyCentComm
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/centcomm_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldGlassAssemblySyndicate
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/syndicate_old.rsi
+    state: "assembly"
+
+#endregion Glass
+
+#region Standard
+
+# Modern Standard Assemblies
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyRepresentative
+  suffix: Sr
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/representative.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySecurityOld
+  suffix: Security
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/secairlockred.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssembly
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/basic_old.rsi
+    state: "assembly"
+
+# Vintage Standard Assemblies
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyMedical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/medical_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyScience
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/science_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyCommand
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/command_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblySecurity
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/security_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyMaint
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/maint_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyEngineering
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/engineering_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyAtmospherics
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/atmospherics_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyCargo
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/cargo_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblyCentComm
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/centcomm_old.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockOldAssemblySyndicate
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/syndicate_old.rsi
+    state: "assembly"
+
+#endregion Standard

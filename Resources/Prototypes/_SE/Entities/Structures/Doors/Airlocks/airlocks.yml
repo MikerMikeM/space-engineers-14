@@ -1,0 +1,776 @@
+#region Glass
+
+# Standard Glass Airlocks
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassSecurityOld
+  suffix: Security
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/secairlockredglass.rsi
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassRepresentative
+  suffix: Sr
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/representative.rsi
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockOldGlassBase
+  id: AirlockOldGlass
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/basic_old.rsi
+  - type: Wires
+    layoutId: Airlock
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockGlassOld
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_old.rsi
+  - type: Wires
+    layoutId: Airlock
+
+- type: entity
+  id: MediumAirlockGlassOld
+  parent: [MediumGlassAirlockBase, AirlockGlass]
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/big_glass_old.rsi
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassCommand
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/command_old.rsi
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassMedical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/medical_old.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassScience
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/science_old.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassSecurity
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/security_old.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassMaint
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/maint_old.rsi
+  - type: Wires
+    layoutId: Airlock
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassEngineering
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/engineering_old.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassAtmospherics
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/atmospherics_old.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassCargo
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/cargo_old.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassCentComm
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/centcomm_old.rsi
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockOldGlass
+  id: AirlockOldGlassSyndicate
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/syndicate_old.rsi
+  - type: Wires
+    layoutId: AirlockSecurity
+
+# Glass Hatch Airlocks
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchAtmosGlass
+  name: glass airlock
+  suffix: Атмос
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_atmos_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchAtmosGlassBlack
+  name: glass airlock
+  suffix: Atmos, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_atmos_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchBotanyGlass
+  name: glass airlock
+  suffix: Botany
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_botany_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchBotanyGlassBlack
+  name: glass airlock
+  suffix: Botany, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_botany_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchChemGlass
+  name: glass airlock
+  suffix: Chemistry
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_chem_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchChemGlassBlack
+  name: glass airlock
+  suffix: Chemistry, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_chem_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchClearGlass
+  name: glass airlock
+  suffix: Clear
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_clear_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchClearGlassBlack
+  name: glass airlock
+  suffix: Clear, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_clear_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchCommGlass
+  name: glass airlock
+  suffix: Command
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_comm_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchCommGlassBlack
+  name: glass airlock
+  suffix: Command, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_comm_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchDormGlass
+  name: glass airlock
+  suffix: Dorms
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_dorm_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchDormGlassBlack
+  name: glass airlock
+  suffix: Dorms, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_dorm_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchEngineerGlass
+  name: glass airlock
+  suffix: Engineering
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_engin_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchEngineerGlassBlack
+  name: glass airlock
+  suffix: Engineering, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_engin_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchMaintenanceGlass
+  name: glass airlock
+  suffix: Maintenance
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_maint_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchMaintenanceGlassBlack
+  name: glass airlock
+  suffix: Maintenance, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_maint_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchMedicalGlass
+  name: glass airlock
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_medi_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchMedicalGlassBlack
+  name: glass airlock
+  suffix: Medical, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_medi_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLua, AirlockGlass]
+  id: AirlockHatchScienceGlass
+  name: glass airlock
+  suffix: Science
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_scie_lua.rsi
+
+- type: entity
+  parent: [AirlockBaseLuaBlack, AirlockGlass]
+  id: AirlockHatchScienceGlassBlack
+  name: glass airlock
+  suffix: Science, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/glass_hatch_scie_lua.rsi
+
+# Big / Medium Glass Airlocks
+- type: entity
+  id: BigGlassAirlockBase
+  parent: AirlockGlass
+  name: big glass airlock
+  description: This looks like some hydraulic press... It opens, it closes, it can crush you.
+  suffix: 3-tiled
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.49,-0.49,1.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - GlassAirlockLayer
+  - type: Sprite
+    snapCardinals: false
+    offset: 0,0
+
+- type: entity
+  id: BigExternalAirlockGlass
+  parent: [BigGlassAirlockBase, AirlockExternalGlass]
+  name: big glass airlock
+  suffix: 3-tiled, External
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/big_external_glass_lua.rsi
+
+- type: entity
+  id: BigMedicalAirlockGlass
+  parent: [BigGlassAirlockBase, AirlockGlass]
+  name: big glass airlock
+  suffix: 3-tiled, Medical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/big_medical_glass_lua.rsi
+
+- type: entity
+  id: BigAirlockGlass
+  parent: [BigGlassAirlockBase, AirlockGlass]
+  name: big glass airlock
+  suffix: 3-tiled
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/big_glass_lua.rsi
+
+- type: entity
+  id: MediumGlassAirlockBase
+  parent: AirlockGlass
+  name: medium glass airlock
+  description: Simple airlock, but... Twice as big as any airlock. It opens, it closes, it can crush you.
+  suffix: 2-tiled
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,1.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - GlassAirlockLayer
+  - type: Sprite
+    snapCardinals: false
+    offset: 0.5,0
+
+- type: entity
+  id: MediumMedicalAirlockGlass
+  parent: [MediumGlassAirlockBase, AirlockGlass]
+  name: medium glass airlock
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Glass/medium_medical_glass_lua.rsi
+
+#endregion Glass
+
+#region Standard
+
+# Standard Airlocks
+- type: entity
+  parent: Airlock
+  id: AirlockSecurityOld
+  suffix: Security
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/secairlockred.rsi
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: Airlock
+  id: AirlockRepresentative
+  suffix: Sr
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/representative.rsi
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockOldBase
+  id: AirlockOld
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/basic_old.rsi
+  - type: Wires
+    layoutId: Airlock
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldCommand
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/command_old.rsi
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldMedical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/medical_old.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldScience
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/science_old.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldSecurity
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/security_old.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldMaint
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/maint_old.rsi
+  - type: Wires
+    layoutId: Airlock
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldEngineering
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/engineering_old.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldAtmospherics
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/atmospherics_old.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldCargo
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/cargo_old.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldCentComm
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/centcomm_old.rsi
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockOld
+  id: AirlockOldSyndicate
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/syndicate_old.rsi
+  - type: Wires
+    layoutId: AirlockSecurity
+
+# Standard Hatch Airlocks
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchAtmos
+  name: airlock
+  suffix: Atmos
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_atmos_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchAtmosBlack
+  name: airlock
+  suffix: Atmos, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_atmos_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchBotany
+  name: airlock
+  suffix: Botany
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_botany_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchBotanyBlack
+  name: airlock
+  suffix: Botany, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_botany_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchChem
+  name: airlock
+  suffix: Chemistry
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_chem_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchChemBlack
+  name: airlock
+  suffix: Chemistry, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_chem_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchClear
+  name: airlock
+  suffix: Clear
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_clear_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchClearBlack
+  name: airlock
+  suffix: Clear, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_clear_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchComm
+  name: airlock
+  suffix: Command
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_comm_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchCommBlack
+  name: airlock
+  suffix: Command, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_comm_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchDorm
+  name: airlock
+  suffix: Dorms
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_dorm_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchDormBlack
+  name: airlock
+  suffix: Dorms, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_dorm_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchEngineer
+  name: airlock
+  suffix: Engineering
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_engin_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchEngineerBlack
+  name: airlock
+  suffix: Engineering, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_engin_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchMaint
+  name: airlock
+  suffix: Maintenance
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_maint_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchMaintenanceBlack
+  name: airlock
+  suffix: Maintenance, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_maint_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchMedical
+  name: airlock
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_medi_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchMedicalBlack
+  name: airlock
+  suffix: Medical, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_medi_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockHatchScience
+  name: airlock
+  suffix: Science
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_scie_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchScienceBlack
+  name: airlock
+  suffix: Science, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_scie_lua.rsi
+
+- type: entity
+  parent: AirlockBaseLuaBlack
+  id: AirlockHatchSecurityBlack
+  name: airlock
+  suffix: Стража, Dark
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_luacurity_lua.rsi
+
+# COLORED
+- type: entity
+  parent: Airlock
+  id: AirlockPurpleTest
+  name: airlock
+  components:
+  - type: Door
+    crushDamage:
+      types:
+        Blunt: 15
+    openSound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_open.ogg
+    closeSound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_close.ogg
+    denySound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_deny.ogg
+  - type: DoorBolt
+    boltUpSound:
+      path: /Audio/_SE/Machines/Airlocks/boltsup.ogg
+    boltDownSound:
+      path: /Audio/_SE/Machines/Airlocks/boltsdown.ogg
+  - type: Sprite
+    sprite: SE/Structures/Doors/Airlocks/Standard/colored_basic.rsi
+    snapCardinals: true
+    layers:
+    - state: closed_color
+      map: ["enum.DoorVisualLayers.BaseColor"]
+      color: "#9C0DE1"
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      visible: false
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+    - state: emergency_unlit
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+    - state: panel_open
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified_ai
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.HUD"]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Sparks"]
+
+#endregion Standard

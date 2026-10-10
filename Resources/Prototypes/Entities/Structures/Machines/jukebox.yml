@@ -21,6 +21,9 @@
   - type: Appearance
   - type: ApcPowerReceiver
     powerLoad: 100
+  - type: ContainerContainer # _SE
+    containers:
+      jukebox-cassettes: !type:Container
   - type: ExtensionCableReceiver
   - type: ActivatableUI
     key: enum.JukeboxUiKey.Key

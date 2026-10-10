@@ -1,6 +1,8 @@
+using System.Numerics; // Frontier: wallmount jukebox
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Audio; // _SE
 
 namespace Content.Shared.Audio.Jukebox;
 
@@ -11,32 +13,82 @@ public sealed partial class JukeboxComponent : Component
     [DataField, AutoNetworkedField]
     public ProtoId<JukeboxPrototype>? SelectedSongId;
 
+    // Frontier: Shuffle & Repeat
+    /// <summary>
+    /// Whether or not the currently selected song is the first being played.
+    /// Useful for shuffle.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool FirstPlay = true;
+
+    [ViewVariables]
+    public JukeboxPlaybackMode PlaybackMode = JukeboxPlaybackMode.Single;
+    // End Frontier: Shuffle & Repeat
+
     [DataField, AutoNetworkedField]
     public EntityUid? AudioStream;
 
     /// <summary>
     /// RSI state for the jukebox being on.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Lua AutoNetworkedField
     public string? OnState;
 
     /// <summary>
     /// RSI state for the jukebox being on.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Lua AutoNetworkedField
     public string? OffState;
 
     /// <summary>
     /// RSI state for the jukebox track being selected.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Lua AutoNetworkedField
     public string? SelectState;
+
+    [DataField]
+    public string MenuTitle = "jukebox-menu-title";
+
+    [DataField]
+    public string Category = "Default";
 
     [ViewVariables]
     public bool Selecting;
 
     [ViewVariables]
     public float SelectAccumulator;
+
+    // Frontier: wallmount jukebox
+    [DataField]
+    public Vector2 AudioOffset = Vector2.Zero;
+    // End Frontier
+    // Lua start
+    [DataField]
+    public string? OnOverlayState;
+
+    [DataField]
+    public List<string>? OnRandomStates;
+
+    [DataField]
+    public bool SelectIsLoop;
+
+    [ViewVariables]
+    public bool UiOpen;
+    // Lua end
+
+    // _SE start
+    [DataField, AutoNetworkedField]
+    public List<EntityUid> Cassettes = new();
+
+    [DataField, AutoNetworkedField]
+    public int SelectedCassetteIndex;
+
+    [DataField]
+    public SoundSpecifier CassetteInsertSound = new SoundPathSpecifier("/Audio/_SE/Machines/Jukebox/cassette_insert.ogg");
+
+    [DataField]
+    public SoundSpecifier CassetteEjectSound = new SoundPathSpecifier("/Audio/_SE/Machines/Jukebox/cassette_eject.ogg");
+    // _SE end
 }
 
 [Serializable, NetSerializable]
@@ -60,6 +112,22 @@ public sealed class JukeboxSetTimeMessage(float songTime) : BoundUserInterfaceMe
     public float SongTime { get; } = songTime;
 }
 
+// Frontier: Shuffle & Repeat
+[Serializable, NetSerializable]
+public sealed class JukeboxSetPlaybackModeMessage(JukeboxPlaybackMode playbackMode) : BoundUserInterfaceMessage
+{
+    public JukeboxPlaybackMode PlaybackMode = playbackMode;
+}
+
+[Serializable, NetSerializable]
+public enum JukeboxPlaybackMode : byte
+{
+    Single,
+    Shuffle,
+    Repeat,
+}
+// End Frontier: Shuffle & Repeat
+
 [Serializable, NetSerializable]
 public enum JukeboxVisuals : byte
 {
@@ -74,7 +142,26 @@ public enum JukeboxVisualState : byte
     Select,
 }
 
+// _SE start
+[Serializable, NetSerializable]
+public sealed class JukeboxSelectCassetteMessage(int index) : BoundUserInterfaceMessage
+{
+    public int Index { get; } = index;
+}
+
+[Serializable, NetSerializable]
+public sealed class JukeboxEjectCassetteMessage(int index) : BoundUserInterfaceMessage
+{
+    public int Index { get; } = index;
+}
+// _SE end
+
 public enum JukeboxVisualLayers : byte
 {
-    Base
+    Base, // Lua add ,
+    // Lua start
+    Overlay,
+    OverlayStatic,
+    OverlayDynamic
+    // Lua end
 }

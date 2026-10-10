@@ -408,9 +408,9 @@
   materials:
     Wood: 100
 
-- type: latheRecipe
-  parent: BaseBureaucraticRecipe
-  id: HandLabeler
-  result: HandLabeler
-  materials:
-    Plastic: 500
+#- type: latheRecipe
+#  parent: BaseBureaucraticRecipe
+#  id: HandLabeler
+#  result: HandLabeler
+#  materials:
+#    Plastic: 500

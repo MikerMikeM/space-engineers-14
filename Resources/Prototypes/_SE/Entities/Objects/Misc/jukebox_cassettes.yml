@@ -1,0 +1,55 @@
+- type: entity
+  parent: BaseItem
+  id: JukeboxCassetteBase
+  abstract: true
+  components:
+  - type: JukeboxCassette
+  - type: Sprite
+    sprite: _SE/Objects/Devices/cassette.rsi
+    state: cassette_nt
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: JukeboxCassetteBase
+  id: JukeboxCassetteBasic
+  name: classical nanotrasen cassette
+  description: Basic cassette that is always shipped with jukebox in one box.
+  components:
+  - type: Sprite
+    state: cassette_nt
+  - type: JukeboxCassette
+    cassetteName: "cassette-name-basic"
+    songs:
+    - FlipFlap
+    - Tintin
+    - Thunderdome
+    - Constellations
+    - Drifting
+    - starlight
+    - sunset
+
+- type: entity
+  parent: JukeboxCassetteBase
+  id: JukeboxCassetteMinecraft
+  name: minecraft soundtrack cassette
+  description: This cassette looks broken and it's tape is scratched severely. But, it seems to work still.
+  components:
+  - type: Sprite
+    state: cassette_minecraft
+  - type: JukeboxCassette
+    cassetteName: "cassette-name-minecraft"
+    songs:
+    - BiomeFest
+    - Taswell
+    - Sweden
+    - AriaMath
+
+#- type: entity
+#  parent: JukeboxCassetteBase
+#  id: JukeboxCassetteCategoryTemplate
+#  name: category cassette
+#  components:
+#  - type: JukeboxCassette
+#    cassetteName: "jukebox-cassette-basic"
+#    category: "Jazz"   # If you ever need to import some category.

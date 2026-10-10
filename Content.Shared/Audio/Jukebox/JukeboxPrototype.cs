@@ -20,4 +20,13 @@ public sealed partial class JukeboxPrototype : IPrototype
 
     [DataField(required: true)]
     public SoundPathSpecifier Path = default!;
+
+    // _SE start
+    /// <summary>
+    /// Опциональная категория трека. На кассете можно указать Category —
+    /// тогда все треки с этой категорией попадут на кассету автоматически.
+    /// </summary>
+    [DataField]
+    public string Category = "Default";
+    // _SE end
 }

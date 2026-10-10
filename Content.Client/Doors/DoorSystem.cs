@@ -20,14 +20,26 @@ public sealed partial class DoorSystem : SharedDoorSystem
 
     protected override void OnComponentInit(Entity<DoorComponent> ent, ref ComponentInit args)
     {
+        base.OnComponentInit(ent, ref args);
+
         var comp = ent.Comp;
-        comp.OpenSpriteStates = new List<(Enum, string)>(2);
-        comp.ClosedSpriteStates = new List<(Enum, string)>(2);
+
+        var hasColor = _sprite.TryGetLayer(ent.Owner, DoorVisualLayers.BaseColor, out _, false); // _SE
+
+        comp.OpenSpriteStates = new List<(Enum, string)>(hasColor ? 2 : 1); // _SE
+        comp.ClosedSpriteStates = new List<(Enum, string)>(hasColor ? 2 : 1); // _SE
 
         comp.OpenSpriteStates.Add((DoorVisualLayers.Base, comp.OpenSpriteState));
         comp.ClosedSpriteStates.Add((DoorVisualLayers.Base, comp.ClosedSpriteState));
 
-        comp.OpeningAnimation = new Animation
+        // _SE start
+        if (hasColor)
+        {
+            comp.OpenSpriteStates.Add((DoorVisualLayers.BaseColor, comp.OpenColorSpriteState));
+            comp.ClosedSpriteStates.Add((DoorVisualLayers.BaseColor, comp.ClosedColorSpriteState));
+        }
+        // _SE end
+        var openingAnim = new Animation
         {
             Length = comp.OpeningAnimationTime,
             AnimationTracks =
@@ -43,7 +55,7 @@ public sealed partial class DoorSystem : SharedDoorSystem
             },
         };
 
-        comp.ClosingAnimation = new Animation
+        var closingAnim = new Animation // _SE
         {
             Length = comp.ClosingAnimationTime,
             AnimationTracks =
@@ -58,6 +70,32 @@ public sealed partial class DoorSystem : SharedDoorSystem
                 },
             },
         };
+        // _SE start
+
+        if (hasColor)
+        {
+            openingAnim.AnimationTracks.Add(new AnimationTrackSpriteFlick
+            {
+                LayerKey = DoorVisualLayers.BaseColor,
+                KeyFrames =
+                {
+                    new AnimationTrackSpriteFlick.KeyFrame(comp.OpeningColorSpriteState, 0f),
+                },
+            });
+
+            closingAnim.AnimationTracks.Add(new AnimationTrackSpriteFlick
+            {
+                LayerKey = DoorVisualLayers.BaseColor,
+                KeyFrames =
+                {
+                    new AnimationTrackSpriteFlick.KeyFrame(comp.ClosingColorSpriteState, 0f),
+                },
+            });
+        }
+
+        comp.OpeningAnimation = openingAnim;
+        comp.ClosingAnimation = closingAnim;
+        // _SE end
 
         comp.EmaggingAnimation = new Animation
         {
@@ -87,17 +125,21 @@ public sealed partial class DoorSystem : SharedDoorSystem
         switch (ent.Comp.State)
         {
             case DoorState.Open:
-
                 foreach (var (layer, layerState) in ent.Comp.OpenSpriteStates)
                 {
+                    if (!_sprite.TryGetLayer(ent.Owner, layer, out _, false)) // _SE
+                        continue; // _SE
+
                     _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
                 }
 
                 break;
             case DoorState.Closed:
-
                 foreach (var (layer, layerState) in ent.Comp.ClosedSpriteStates)
                 {
+                    if (!_sprite.TryGetLayer(ent.Owner, layer, out _, false)) // _SE
+                        continue; // _SE
+
                     _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
                 }
 
@@ -141,6 +183,9 @@ public sealed partial class DoorSystem : SharedDoorSystem
 
                 foreach (var (layer, layerState) in entity.Comp.OpenSpriteStates)
                 {
+                    if (!_sprite.TryGetLayer(entity.Owner, layer, out _, false)) // _SE
+                        continue; // _SE
+
                     // Allow animations to play while it's open (e.g., pinion);
                     // the animation unsets this so we gotta set it again.
                     _sprite.LayerSetAutoAnimated((entity.Owner, sprite), layer, true);
@@ -160,6 +205,9 @@ public sealed partial class DoorSystem : SharedDoorSystem
 
                 foreach (var (layer, layerState) in entity.Comp.ClosedSpriteStates)
                 {
+                    if (!_sprite.TryGetLayer(entity.Owner, layer, out _, false)) // _SE
+                        continue; // _SE
+
                     _sprite.LayerSetAutoAnimated((entity.Owner, sprite), layer, true);
                     _sprite.LayerSetRsiState((entity.Owner, sprite), layer, layerState);
                 }

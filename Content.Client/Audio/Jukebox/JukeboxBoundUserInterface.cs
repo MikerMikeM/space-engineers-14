@@ -2,13 +2,18 @@ using Content.Shared.Audio.Jukebox;
 using Robust.Client.Audio;
 using Robust.Client.UserInterface;
 using Robust.Shared.Audio.Components;
+using Robust.Client.Player;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-
+using System.Linq;
+using Robust.Shared.Audio.Systems; // _SE
 namespace Content.Client.Audio.Jukebox;
 
 public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
 {
+    [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     [ViewVariables]
     private JukeboxMenu? _menu;
@@ -35,6 +40,21 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
                 SendMessage(new JukeboxPauseMessage());
             }
         };
+        // _SE start
+        _menu.OnCassetteSelected += index =>
+        {
+            SendMessage(new JukeboxSelectCassetteMessage(index));
+        };
+
+        _menu.OnCassetteEject += index =>
+        {
+            // локальный предсказанный звук
+            if (EntMan.TryGetComponent(Owner, out JukeboxComponent? juke))
+                _audio.PlayPredicted(juke.CassetteEjectSound, Owner, null);
+
+            SendMessage(new JukeboxEjectCassetteMessage(index));
+        };
+        // _SE end
 
         _menu.OnStopPressed += () =>
         {
@@ -42,6 +62,13 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
         };
 
         _menu.OnSongSelected += SelectSong;
+
+        // Frontier: Shuffle & Repeat
+        _menu.OnModeChanged += playbackMode =>
+        {
+            SendMessage(new JukeboxSetPlaybackModeMessage(playbackMode));
+        };
+        // End Frontier: Shuffle & Repeat
 
         _menu.SetTime += SetTime;
         PopulateMusic();
@@ -56,9 +83,10 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
         if (_menu == null || !EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox))
             return;
 
+        _menu.SetMenuTitle(jukebox.MenuTitle);
         _menu.SetAudioStream(jukebox.AudioStream);
 
-        if (_protoManager.Resolve(jukebox.SelectedSongId, out var songProto))
+        if (_protoManager.TryIndex(jukebox.SelectedSongId, out var songProto))
         {
             var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.Path.Path.ToString());
             _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
@@ -69,10 +97,35 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
         }
     }
 
+    // _SE start
     public void PopulateMusic()
     {
-        _menu?.Populate(_protoManager.EnumeratePrototypes<JukeboxPrototype>());
+        if (!EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox))
+            return;
+
+        if (jukebox.Cassettes.Count == 0 ||
+            jukebox.SelectedCassetteIndex < 0 ||
+            jukebox.SelectedCassetteIndex >= jukebox.Cassettes.Count)
+        {
+            _menu?.Populate(Enumerable.Empty<JukeboxPrototype>());
+            return;
+        }
+
+        var cassetteUid = jukebox.Cassettes[jukebox.SelectedCassetteIndex];
+        if (!EntMan.TryGetComponent(cassetteUid, out JukeboxCassetteComponent? cassette))
+        {
+            _menu?.Populate(Enumerable.Empty<JukeboxPrototype>());
+            return;
+        }
+
+        var songs = cassette.Songs
+            .Select(id => _protoManager.TryIndex(id, out JukeboxPrototype? proto) ? proto : null)
+            .Where(p => p != null)
+            .Cast<JukeboxPrototype>();
+
+        _menu?.Populate(songs);
     }
+    // _SE end
 
     public void SelectSong(ProtoId<JukeboxPrototype> songid)
     {
@@ -97,5 +150,13 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
 
         SendMessage(new JukeboxSetTimeMessage(sentTime));
     }
-}
 
+    // Frontier: Shuffle & Repeat
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+        _menu?.UpdateState(state);
+        PopulateMusic(); // _SE
+    }
+    // End Frontier
+}

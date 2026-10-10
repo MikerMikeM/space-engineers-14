@@ -1,0 +1,70 @@
+- type: entity
+  parent: BaseWindowStructureDirectional
+  id: FullWindowDirectional
+  name: frameless directional window
+  description: So fragile that feels like air.
+  components:
+  - type: Sprite
+    sprite: _ADT/Structures/Windows/directional.rsi
+    state: full_window
+  - type: Icon
+    sprite: _ADT/Structures/Windows/directional.rsi
+    state: full_window
+  - type: Damageable
+    damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseWindowStructure
+  id: FullWindow
+  name: frameless window
+  description: So fragile that feels cold.
+  components:
+  - type: Sprite
+    sprite: _ADT/Structures/Windows/full_window.rsi
+  - type: Icon
+    sprite: _ADT/Structures/Windows/full_window.rsi
+    state: full
+  - type: Damageable
+    damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageVisuals
+    thresholds: [8, 12, 24]
+    damageDivisor: 2
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _ADT/Structures/Windows/cracks_adt.rsi

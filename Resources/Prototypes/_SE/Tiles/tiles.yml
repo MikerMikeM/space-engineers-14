@@ -1,7 +1,7 @@
 - type: tile
   id: FloorDev
   name: tiles-floor-dev
-  sprite: _SE/Tiles/dev.png
+  sprite: /Textures/_SE/Tiles/dev.png
   placementVariants:
   - 1.0
   - 1.0
@@ -11,5 +11,5 @@
   isSubfloor: false
   footstepSounds:
     collection: FootstepTile
-  friction: 0
+  friction: 1
   heatCapacity: 10000

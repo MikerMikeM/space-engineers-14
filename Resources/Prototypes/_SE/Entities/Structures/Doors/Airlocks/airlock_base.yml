@@ -1,0 +1,157 @@
+- type: entity
+  parent: Airlock
+  id: AirlockBaseLua
+  name: airlock
+  abstract: true
+  suffix: Base, Hatch
+  components:
+  - type: Door
+    crushDamage:
+      types:
+        Blunt: 15
+    openSound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_open.ogg
+    closeSound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_close.ogg
+    denySound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_deny.ogg
+  - type: DoorBolt
+    boltUpSound:
+      path: /Audio/_SE/Machines/Airlocks/boltsup.ogg
+    boltDownSound:
+      path: /Audio/_SE/Machines/Airlocks/boltsdown.ogg
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_atmos_lua.rsi
+    snapCardinals: true
+    layers:
+    - state: closed_color
+      map: ["enum.DoorVisualLayers.BaseColor"]
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      visible: false
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+    - state: emergency_unlit
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+    - state: panel_open
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified_ai
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.HUD"]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Sparks"]
+
+- type: entity
+  parent: AirlockBaseLua
+  id: AirlockBaseLuaBlack
+  name: airlock
+  abstract: true
+  suffix: Base, Hatch, Black
+  components:
+  - type: Sprite
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_atmos_lua.rsi
+    snapCardinals: true
+    layers:
+    - state: closed_color
+      map: ["enum.DoorVisualLayers.BaseColor"]
+      color: "#403d40"
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      visible: false
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+    - state: emergency_unlit
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+    - state: panel_open
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: electrified_ai
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.HUD"]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: ["enum.ElectrifiedLayers.Sparks"]
+
+- type: entity
+  parent: Airlock
+  id: AirlockOldBase
+  name: old ass airlock
+  abstract: true
+  components:
+  - type: Door
+    crushDamage:
+      types:
+        Blunt: 15
+    openSound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_open.ogg
+    closeSound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_close.ogg
+    denySound:
+      path: /Audio/_SE/Machines/Airlocks/airlock_deny.ogg
+  - type: DoorBolt
+    boltUpSound:
+      path: /Audio/_SE/Machines/Airlocks/boltsup.ogg
+    boltDownSound:
+      path: /Audio/_SE/Machines/Airlocks/boltsdown.ogg
+
+- type: entity
+  id: AirlockOldGlassBase
+  parent: AirlockOldBase
+  name: glass old ass airlock
+  abstract: true
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Door
+    occludes: false
+  - type: Occluder
+    enabled: false
+  - type: AnimationPlayer
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49" # don't want this colliding with walls or they won't close
+        density: 100
+        mask:
+        - FullTileMask
+        layer:     #removed opaque from the layer, allowing lasers to pass through glass airlocks
+        - GlassAirlockLayer
+  - type: LayerChangeOnWeld
+    unWeldedLayer: GlassAirlockLayer
+    weldedLayer: GlassLayer
+  - type: Paintable
+    group: AirlockGlass
+  - type: RadiationBlocker
+    resistance: 2
+  - type: Tag
+    tags:
+      - GlassAirlock
+      # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+      - DoorRemoteWhitelist
+      # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door

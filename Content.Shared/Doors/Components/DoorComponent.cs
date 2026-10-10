@@ -196,6 +196,26 @@ public sealed partial class DoorComponent : Component
     [DataField]
     public string EmaggingSpriteState = "sparks";
 
+    // _SE start
+    /// <summary>
+    /// Smth for colored door.
+    /// </summary>
+    [DataField]
+    public string OpenColorSpriteState = "open_color";
+
+    [DataField]
+    public string ClosedColorSpriteState = "closed_color";
+
+    [DataField]
+    public string OpeningColorSpriteState = "opening_color";
+
+    [DataField]
+    public string ClosingColorSpriteState = "closing_color";
+
+    [DataField]
+    public string AssemblyColorSpriteState = "assembly_color";
+    // _SE end
+
     /// <summary>
     /// The length of the door's opening animation.
     /// </summary>
@@ -350,4 +370,5 @@ public enum DoorVisualLayers : byte
     BaseBolted,
     BaseEmergencyAccess,
     BaseEmagging,
+    BaseColor,
 }

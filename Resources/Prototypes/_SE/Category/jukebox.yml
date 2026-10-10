@@ -1,0 +1,27 @@
+- type: jukebox
+  id: BiomeFest
+  name: C418 - Biome Fest
+  path:
+    path: /Audio/_SE/Jukebox/BiomeFest.ogg
+  category: "Minecraft"
+
+- type: jukebox
+  id: Taswell
+  name: C418 - Taswell
+  path:
+    path: /Audio/_SE/Jukebox/Taswell.ogg
+  category: "Minecraft"
+
+- type: jukebox
+  id: AriaMath
+  name: C418 - Aria Math
+  path:
+    path: /Audio/_SE/Jukebox/AriaMath.ogg
+  category: "Minecraft"
+
+- type: jukebox
+  id: Sweden
+  name: C418 - Sweden
+  path:
+    path: /Audio/_SE/Jukebox/Sweden.ogg
+  category: "Minecraft"
