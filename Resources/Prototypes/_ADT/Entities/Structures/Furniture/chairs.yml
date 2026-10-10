@@ -382,6 +382,7 @@
   - type: Construction
     graph: ADTSeat
     node: adtarmchairblue2
+
 - type: entity
   name: barber chair
   id: ADTBarberChair
@@ -393,3 +394,13 @@
     sprite: _ADT/Structures/Furniture/Chairs/barber_chair.rsi
     state: barber_chair
 
+- type: entity
+  name: barbell chair
+  id: ADTBarbellChair
+  parent: StoolBase
+  description: Workout chair made for special workout. Feel like a monster.
+  components:
+  - type: Rotatable
+  - type: Sprite
+    sprite: _ADT/Structures/Furniture/Chairs/barber_chair.rsi
+    state: barber_chair
