@@ -716,7 +716,7 @@
   suffix: Стража, Dark
   components:
   - type: Sprite
-    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_luacurity_lua.rsi
+    sprite: _SE/Structures/Doors/Airlocks/Standard/hatch_security_lua.rsi
 
 # COLORED
 - type: entity
@@ -724,21 +724,6 @@
   id: AirlockPurpleTest
   name: airlock
   components:
-  - type: Door
-    crushDamage:
-      types:
-        Blunt: 15
-    openSound:
-      path: /Audio/_SE/Machines/Airlocks/airlock_open.ogg
-    closeSound:
-      path: /Audio/_SE/Machines/Airlocks/airlock_close.ogg
-    denySound:
-      path: /Audio/_SE/Machines/Airlocks/airlock_deny.ogg
-  - type: DoorBolt
-    boltUpSound:
-      path: /Audio/_SE/Machines/Airlocks/boltsup.ogg
-    boltDownSound:
-      path: /Audio/_SE/Machines/Airlocks/boltsdown.ogg
   - type: Sprite
     sprite: SE/Structures/Doors/Airlocks/Standard/colored_basic.rsi
     snapCardinals: true
