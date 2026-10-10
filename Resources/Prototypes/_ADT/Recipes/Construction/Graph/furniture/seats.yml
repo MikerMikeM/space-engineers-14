@@ -430,21 +430,6 @@
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: adtbenchchurchleft
-          steps:
-            - material: WoodPlank
-              amount: 2
-              doAfter: 1
-        - to: adtbenchchurchmiddle
-          steps:
-            - material: WoodPlank
-              amount: 2
-              doAfter: 1
-        - to: adtbenchchurchright
-          steps:
-            - material: WoodPlank
-              amount: 2
-              doAfter: 1
         - to: adtbarbellchair
           steps:
             - material: Steel
