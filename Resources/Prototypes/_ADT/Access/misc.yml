@@ -39,13 +39,6 @@
   - NuclearOperative
   - SyndicateAgent
   - Wizard
-  - SpaceSecOfficial
-  - SpaceSecMaintenance
-  - SpaceSecExternal
-  - SpaceSecSecurity
-  - SpaceSecArmory
-  - SpaceSecCommand
-  - ADTTrader
 
 - type: accessGroup
   id: ADTAccessCaptain  #ADT-group-roles - для капитана давать все доступы, кроме ЦК и Офицера Синего Щита

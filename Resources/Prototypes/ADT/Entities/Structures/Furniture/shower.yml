@@ -65,10 +65,9 @@
         showerWater:
           maxVol: 200
     - type: SolutionRegeneration
-      solution: showerWater
       generated:
-        reagents:
-        - ReagentId: Water
-          Quantity: 5
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
     - type: DrainableSolution
       solution: showerWater

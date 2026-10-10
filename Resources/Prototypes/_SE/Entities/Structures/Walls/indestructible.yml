@@ -3,9 +3,6 @@
   id: WallDev
   name: wall dev
   components:
-  - type: Tag
-    tags:
-    - Wall
   - type: Sprite
     sprite: _SE/Structures/Walls/dev.rsi
   - type: Icon
@@ -25,7 +22,8 @@
           - WallLayer
           density: 4000
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: RadiationBlocker
     resistance: 5

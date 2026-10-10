@@ -31,8 +31,9 @@
   - type: Appearance
   - type: RadiationBlocker
     resistance: 8
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Destructible
     thresholds:
