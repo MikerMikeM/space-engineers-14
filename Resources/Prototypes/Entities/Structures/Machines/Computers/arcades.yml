@@ -26,7 +26,7 @@
   - type: GenericVisualizer
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
-        computerLayerBody:
+        enum.ComputerVisualLayers.Frame:
           None: { state: arcade, sprite: Structures/Machines/arcade.rsi }
   # ADT-Tweak end
   - type: WiresPanel

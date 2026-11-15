@@ -13,7 +13,26 @@
       # _SE start
       states:
       - !type:CornerSpriteSmoothing
-        mask: [ walls, windows, grilles, marble, doors ]
+        mask:
+        - windows
+        - windows-reinf
+        - windows-tinted
+        - windows-plasma
+        - windows-plasma-reinf
+        - windows-uranium
+        - windows-uranium-reinf
+        - windows-exo
+        - windows-shuttle
+        - windows-plastitanium
+        - windows-regal
+        - walls-exo
+        - walls-shuttle
+        - walls-plastitanium
+        - walls-material
+        - walls-marble
+        - walls
+        - grilles
+        - doors
         base: state
       # _SE end
     - type: Destructible

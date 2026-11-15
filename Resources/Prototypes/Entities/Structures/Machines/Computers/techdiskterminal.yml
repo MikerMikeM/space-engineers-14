@@ -17,7 +17,7 @@
   - type: GenericVisualizer
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
-        computerLayerBody:
+        enum.ComputerVisualLayers.Frame:
           None: { state: icon, sprite: Structures/Machines/tech_disk_printer.rsi }
           East: { state: icon, sprite: Structures/Machines/tech_disk_printer.rsi }
           West: { state: icon, sprite: Structures/Machines/tech_disk_printer.rsi }
