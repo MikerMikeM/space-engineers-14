@@ -11,35 +11,35 @@
             "name": "full"
         },
         {
-            "name": "plastitanium0",
+            "name": "wall0",
             "directions": 4
         },
         {
-            "name": "plastitanium1",
+            "name": "wall1",
             "directions": 4
         },
         {
-            "name": "plastitanium2",
+            "name": "wall2",
             "directions": 4
         },
         {
-            "name": "plastitanium3",
+            "name": "wall3",
             "directions": 4
         },
         {
-            "name": "plastitanium4",
+            "name": "wall4",
             "directions": 4
         },
         {
-            "name": "plastitanium5",
+            "name": "wall5",
             "directions": 4
         },
         {
-            "name": "plastitanium6",
+            "name": "wall6",
             "directions": 4
         },
         {
-            "name": "plastitanium7",
+            "name": "wall7",
             "directions": 4
         }
     ]
