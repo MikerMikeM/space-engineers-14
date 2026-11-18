@@ -1,0 +1,74 @@
+
+  # TODO: could have a unique sprite in the future
+
+- type: entity
+  id: ADTBoxFolderBase
+  parent: BoxFolderBase
+  name: folder
+  description: A folder filled with top secret paperwork.
+  components:
+  - type: Sprite
+    sprite: _ADT/Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: folder-colormap
+    - state: folder-base
+
+- type: entity
+  id: ADTBoxFolderDV
+  name: DV folder
+  parent: ADTBoxFolderBase
+  suffix: DV
+  components:
+  - type: Sprite
+    layers:
+    - state: folder-dv
+    - state: folder-base
+
+- type: entity
+  id: ADTPaperPack
+  parent: [ BaseStorageItem, BaseBagOpenClose ]
+  name: paper pack
+  description: A paper package that contains ten A4 sheets. The bureaucrat's delight.
+  components:
+  - type: Sprite
+    sprite: _ADT/Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: pack-closed
+      map: ["closeLayer"]
+    - state: pack-open
+      map: ["openLayer"]
+      visible: false
+    - state: pack-one
+      map: ["pack-one"]
+      visible: false
+    - state: pack-full
+      map: ["pack-full"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+  - type: Item
+    sprite: _ADT/Objects/Misc/bureaucracy.rsi
+    size: Small
+  - type: Storage
+    grid:
+    - 0,0,4,1
+    whitelist:
+      tags:
+      - Paper
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Paper
+          amount: 10
+  - type: ItemCounter
+    count:
+      tags: [Paper]
+    composite: true
+    layerStates:
+    - pack-one
+    - pack-full
+  - type: Appearance
+  - type: StaticPrice
+    price: 120

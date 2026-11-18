@@ -1,0 +1,63 @@
+﻿
+- type: entity
+  id: ADTGlobeTerra
+  parent: BaseItem
+  name: Earth globe
+  description: Earth - the home planet of the human race. The globe shows the capitals of many OPZ member states, some of which are underwater.
+  components:
+  - type: Sprite
+    sprite: _ADT/Objects/Misc/globes.rsi
+    state: terra
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: ADTGlobeMoon
+  parent: BaseItem
+  name: Moon globe
+  description: Where is the space owl?
+  components:
+  - type: Sprite
+    sprite: _ADT/Objects/Misc/globes.rsi
+    state: moon
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: ADTGlobeEurope
+  parent: BaseItem
+  name: Europa globe
+  description: A globe of Jupiter's moon. By the way, the locals live underwater and ride submarines.
+  components:
+  - type: Sprite
+    sprite: _ADT/Objects/Misc/globes.rsi
+    state: europe
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: ADTDesktopClock
+  parent: BaseItem
+  name: desk clock
+  description: How much longer until the end of the shift?...
+  components:
+  - type: Sprite
+    sprite: _ADT/Objects/Misc/desktop_clock.rsi
+    state: clock
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: ADTDesktopTableCaptain
+  parent: BaseItem
+  name: desk plaque "Captain"
+  description: I'M THE BOSS!
+  components:
+  - type: Sprite
+    sprite: _ADT/Objects/Misc/desktop_table.rsi
+    state: desktop_table
+  - type: Anchorable
