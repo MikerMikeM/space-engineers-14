@@ -13,7 +13,8 @@ namespace Content.Server.Chat.Systems;
 
 public sealed partial class ChatSystem
 {
-    [Dependency] private DiscordChatLink _discordChatLink = default!;
+    [Dependency] private DiscordChatLink _discordChatLink = default!; // _SE
+
     private void SendEntitySpeak(
         EntityUid source,
         string originalMessage,

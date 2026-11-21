@@ -10,4 +10,9 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> DeadChatEnabled =
         CVarDef.Create("dead_chat.enabled", true, CVar.NOTIFY | CVar.REPLICATED);
+
+    // _SE start
+    public static readonly CVarDef<string> DeadDiscordChannelId =
+        CVarDef.Create("dead.discord_channel_id", string.Empty, CVar.SERVERONLY);
+    // _SE end
 }

@@ -77,7 +77,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite # TODO: add sprite for maintenance panel open
-    sprite: _SE/Structures/Power/substation.rsi
+    sprite: _SE/Structures/Power/substation.rsi # _SE
     snapCardinals: true
     layers:
     - state: substation
@@ -94,7 +94,7 @@
     color: "#34e06d" # Corvax-Resprite
     castShadows: false
   - type: PowerMonitoringDevice
-    sprite: _SE/Structures/Power/substation.rsi
+    sprite: _SE/Structures/Power/substation.rsi # _SE
     state: substation_static
   - type: Destructible
     thresholds:
@@ -155,7 +155,7 @@
       board: !type:Container
   - type: Sprite # TODO: add sprite for maintenance panel open
     drawdepth: WallMountedItems
-    sprite: _SE/Structures/Power/substation.rsi
+    sprite: _SE/Structures/Power/substation.rsi # _SE
     layers:
     - state: substation_wall
     - state: screen_wall
@@ -164,7 +164,7 @@
     maxCharge: 2000000
     startingCharge: 0
   - type: PowerMonitoringDevice
-    sprite: _SE/Structures/Power/substation.rsi
+    sprite: _SE/Structures/Power/substation.rsi # _SE
     state: substation_wall_static
   - type: Damageable
     damageModifierSet: SteelMod
@@ -253,7 +253,7 @@
     anchored: true
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: _SE/Structures/Power/substation.rsi
+    sprite: _SE/Structures/Power/substation.rsi # _SE
     layers:
     - state: substation_wall
   - type: Construction

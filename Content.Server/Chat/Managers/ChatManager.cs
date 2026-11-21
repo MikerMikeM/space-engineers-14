@@ -317,10 +317,24 @@ private ISawmill? _sawmill = default!;
         }
         // Corvax-Sponsors-End
 
+        // _SE start
         if (player.Name == "FaustNetzach")
-            {
-                wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName", "[color=#00A86B]F[/color][color=#00A770]a[/color][color=#00A674]u[/color][color=#00A479]s[/color][color=#00A37E]t[/color][color=#00A282]N[/color][color=#00A187]e[/color][color=#00A08B]t[/color][color=#009F90]z[/color][color=#009D95]a[/color][color=#009C99]c[/color][color=#009B9E]h[/color]"), ("message", FormattedMessage.EscapeText(message)));
-            }
+        {
+            var playerName = "[color=#00A86B]F[/color]" +
+                             "[color=#00A770]a[/color]" +
+                             "[color=#00A674]u[/color]" +
+                             "[color=#00A479]s[/color]" +
+                             "[color=#00A37E]t[/color]" +
+                             "[color=#00A282]N[/color]" +
+                             "[color=#00A187]e[/color]" +
+                             "[color=#00A08B]t[/color]" +
+                             "[color=#009F90]z[/color]" +
+                             "[color=#009D95]a[/color]" +
+                             "[color=#009C99]c[/color]" +
+                             "[color=#009B9E]h[/color]";
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName", playerName), ("message", FormattedMessage.EscapeText(message)));
+        }
+        // _SE end
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
         ChatMessageToAll(ChatChannel.OOC, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride, author: player.UserId);

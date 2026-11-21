@@ -2,6 +2,7 @@
   id: CatEars
   bodyPart: HeadTop
   groupWhitelist: [Human]
+  sponsorOnly: false # _SE
   coloring:
     default:
       type: !type:CategoryColoring
@@ -21,6 +22,7 @@
   id: CatTail
   bodyPart: Tail
   groupWhitelist: [Human]
+  sponsorOnly: false # _SE
   coloring:
     default:
       type: !type:CategoryColoring
