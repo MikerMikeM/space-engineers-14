@@ -7,7 +7,8 @@
   - any-glob-to-any-file:
     - 'Resources/Maps/**/*.yml'
     - 'Resources/Prototypes/Maps/**/*.yml'
-    - 'Resources/_SE/Prototypes/Maps/**/*.yml'
+    - 'Resources/Prototypes/Corvax/Maps/**/*.yml'
+    - 'Resources/Prototypes/_SE/Maps/**/*.yml' # _SE
 
 "Changes: UI":
 - changed-files:
