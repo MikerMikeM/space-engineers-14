@@ -24,9 +24,9 @@
   - type: ItemToggle
     predictable: false
     soundActivate:
-      path: /Audio/ADT/Effects/shower_start.ogg
+      path: /Audio/_ADT/Effects/shower_start.ogg # _SE
     soundDeactivate:
-      path: /Audio/ADT/Effects/shower_end.ogg
+      path: /Audio/_ADT/Effects/shower_end.ogg # _SE
   - type: ItemToggleActiveSound
     activeSound:
       collection: ADTShowerMid
