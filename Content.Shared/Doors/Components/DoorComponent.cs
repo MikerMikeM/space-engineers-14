@@ -404,5 +404,5 @@ public enum DoorVisualLayers : byte
     BaseEmergencyAccess,
     /// <summary>A reaction on the door when emagged, typically sparks.</summary>
     BaseEmagging,
-    BaseColor,
+    BaseColor, // _SE
 }

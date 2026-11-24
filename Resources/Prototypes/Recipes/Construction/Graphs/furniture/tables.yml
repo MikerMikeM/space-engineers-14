@@ -93,6 +93,8 @@
             - material: WoodPlank
               amount: 1
               doAfter: 1
+
+        # _SE start
         - to: TableUraniumGlass
           steps:
           - material: UraniumGlass
@@ -114,7 +116,7 @@
               doAfter: 1
             - tool: Welding
               doAfter: 3
-
+        # _SE end
 
     - node: CounterWoodFrame
       entity: CounterWoodFrame
@@ -473,6 +475,7 @@
         - tool: Anchoring
           doAfter: 1
 
+    # _SE start
     - node: TableUraniumGlass
       entity: TableUraniumGlass
       edges:
@@ -512,3 +515,4 @@
               doAfter: 3
             - tool: Anchoring
               doAfter: 1
+    # _SE start

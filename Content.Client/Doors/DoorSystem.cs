@@ -15,6 +15,7 @@ public sealed partial class DoorSystem : SharedDoorSystem
     /// <inheritdoc/>
     protected override void OnComponentInit(Entity<DoorComponent> ent, ref ComponentInit args)
     {
+        // Base call deferred until end of function.
         var comp = ent.Comp;
 
         var hasColor = _sprite.TryGetLayer(ent.Owner, DoorVisualLayers.BaseColor, out _, false); // _SE
@@ -32,7 +33,8 @@ public sealed partial class DoorSystem : SharedDoorSystem
             comp.ClosedSpriteStates.Add((DoorVisualLayers.BaseColor, comp.ClosedColorSpriteState));
         }
         // _SE end
-        var openingAnim = new Animation
+
+        var openingAnim = new Animation // _SE
         {
             Length = comp.OpeningAnimationTime,
             AnimationTracks =
@@ -63,8 +65,8 @@ public sealed partial class DoorSystem : SharedDoorSystem
                 },
             },
         };
-        // _SE start
 
+        // _SE start
         if (hasColor)
         {
             openingAnim.AnimationTracks.Add(new AnimationTrackSpriteFlick
@@ -121,6 +123,7 @@ public sealed partial class DoorSystem : SharedDoorSystem
         switch (ent.Comp.State)
         {
             case DoorState.Open:
+
                 foreach (var (layer, layerState) in ent.Comp.OpenSpriteStates)
                 {
                     if (!_sprite.TryGetLayer(ent.Owner, layer, out _, false)) // _SE
@@ -131,6 +134,7 @@ public sealed partial class DoorSystem : SharedDoorSystem
 
                 break;
             case DoorState.Closed:
+
                 foreach (var (layer, layerState) in ent.Comp.ClosedSpriteStates)
                 {
                     if (!_sprite.TryGetLayer(ent.Owner, layer, out _, false)) // _SE

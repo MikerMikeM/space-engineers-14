@@ -1,3 +1,4 @@
+# _SE start
 - type: entity
   id: BaseStructureComputer
   parent: BaseStructure
@@ -117,3 +118,4 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+# _SE end

@@ -1043,8 +1043,8 @@
       - grilles
       - doors
       base: wall
-  - type: Paintable
-    group: WallSolid
+  - type: Paintable # _SE
+    group: WallSolid # _SE
 
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWall ]
