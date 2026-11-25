@@ -126,3 +126,5 @@ ent-ClothingBackpackMessengerColorTeal = бирюзовый мессенджер
 
 ent-ClothingBackpackMessengerPrivateSecurity = мессенджер частной охраны
     .desc = Бойся побоев.
+
+

@@ -146,13 +146,13 @@
         color: "#eeeeee"
 
 - type: entity
-  parent: NFClothingMessenger
+  parent: ClothingBackpack
   id: ClothingBackpackMessenger
-  name: messenger bag
-  description: A trendy looking messenger bag.
+  name: messenger
+  description: fine messenger
   components:
   - type: Sprite
-    sprite: _NF/Clothing/Back/Messenger/messenger.rsi
+    sprite: _SE/Clothing/Back/Messengers/messenger.rsi
 
 # DEPARTMENTAL
 ## Command
@@ -494,15 +494,6 @@
         color: "#ebdc36"
       - state: clasp-inhand-right
         color: "#8c347f"
-
-- type: entity
-  parent: ClothingBackpackMessenger
-  id: ClothingBackpackMessengerMailCarrier
-  name: mail carrier messenger bag
-  description: A robust messenger bag for waging war against mail.
-  components:
-    - type: Sprite
-      sprite: _NF/Clothing/Back/Messenger/mailman.rsi
 
 - type: entity
   parent: ClothingBackpackMessengerContractor
