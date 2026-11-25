@@ -11,7 +11,7 @@ jobs:
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions-ecosystem/action-remove-labels@v1
+    - uses: actions-ecosystem/action-remove-labels@d05162525702062b6bdef750ed8594fc024b3ed7 # _SE
       with:
         labels: |
           Status: Needs Review

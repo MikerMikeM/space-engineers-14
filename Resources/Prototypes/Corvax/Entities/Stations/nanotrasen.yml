@@ -36,7 +36,7 @@
           - /Maps/Corvax/Ruins/corvax_gas_station.yml
           - /Maps/Corvax/Ruins/corvax_bss_unluck.yml
           - /Maps/Corvax/Ruins/corvax_hotel_trivago.yml
-          - /Maps/Corvax/Ruins/corvax_kamikaze.yml
+          #- /Maps/Corvax/Ruins/corvax_kamikaze.yml # _SE
           - /Maps/Corvax/Ruins/corvax_ore.yml
           - /Maps/Corvax/Ruins/corvax_research_station.yml
           - /Maps/Corvax/Ruins/corvax_rnd_debris.yml

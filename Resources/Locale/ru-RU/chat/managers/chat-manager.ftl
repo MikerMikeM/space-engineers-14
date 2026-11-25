@@ -28,6 +28,9 @@ chat-manager-server-wrap-message = [bold]{ $message }[/bold]
 chat-manager-sender-announcement = Центральное командование
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]Объявление { $sender }:[/font][font size=12]
                                                 { $message }[/bold][/font]
+chat-manager-sender-announcement-wrap-message-signed = [font size=14][bold]Объявление {$sender}:[/bold][/font][font size=12]
+                                                       {$message}[bold]
+                                                       Отправитель: {$signature}[/bold][/font]
 chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize } ]{ chat-manager-speech-double-quote-begin }[BubbleContent]{ $message }[/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
 chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]{ chat-manager-speech-double-quote-begin }[BubbleContent][bold]{ $message }[/bold][/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
 
@@ -35,8 +38,10 @@ chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][
 chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Кто-то[/BubbleHeader] шепчет, { chat-manager-speech-double-quote-begin }[BubbleContent]{ $message }[/BubbleContent]{ chat-manager-speech-double-quote-end }[/italic][/font]
 
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
-chat-manager-entity-me-wrap-message = [italic]{ CAPITALIZE($entityName) } { $message }[/italic]
-
+chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
+    *[false] { CAPITALIZE($entityName) } {$message}[/italic]
+     [true] {CAPITALIZE($entityName)} {$message}[/italic]
+    }
 chat-manager-entity-looc-wrap-message = LOOC: [bold]{ $entityName }:[/bold] { $message }
 chat-manager-send-ooc-wrap-message = OOC: [bold]{ $playerName }:[/bold] { $message }
 chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={ $patronColor }]{ $playerName }[/color]:[/bold] { $message }
@@ -54,8 +59,6 @@ chat-manager-admin-channel-name = АДМИН
 
 chat-manager-rate-limited = Вы отправляете сообщения слишком быстро!
 chat-manager-rate-limit-admin-announcement = Предупреждение о превышении ограничения скорости: { $player }
-
-chat-manager-follow-button = (F)
 
 ## Speech verbs for chat
 
@@ -178,3 +181,5 @@ chat-speech-verb-wawa-1 = произносит
 chat-speech-verb-wawa-2 = заявляет
 chat-speech-verb-wawa-3 = объявляет
 chat-speech-verb-wawa-4 = размышляет
+
+chat-speech-verb-name-horror = Ужас

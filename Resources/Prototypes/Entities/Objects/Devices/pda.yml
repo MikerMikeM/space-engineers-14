@@ -19,6 +19,11 @@
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
       visible: false
+    # _SE start
+    - state: "insert_overlay"
+      map: [ "enum.PdaVisualLayers.CardVisible" ]
+      visible: false
+    # _SE end
     - state: "id_overlay"
       map: [ "enum.PdaVisualLayers.IdLight" ]
       shader: "unshaded"
@@ -76,13 +81,13 @@
     receiveFrequencyId: PDA
     prefix: device-address-prefix-console
     savableAddress: false
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 500
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     cartridgeSlot:
-      priority: -1
       name: device-pda-slot-component-slot-name-cartridge
+      priority: 1
       ejectSound: /Audio/Machines/id_swipe.ogg
       insertSound: /Audio/Machines/id_insert.ogg
       whitelist:
@@ -449,7 +454,7 @@
         components:
         - IdCard
     penSlot:
-      startingItem: Pen
+      startingItem: CrayonMime
       priority: -1
       whitelist:
         tags:
@@ -458,6 +463,7 @@
       insertSound: null
   - type: CartridgeLoader
     cartridgeSlot:
+      priority: 1
       ejectSound: null
       insertSound: null
       whitelist:
@@ -1156,7 +1162,16 @@
 
 - type: entity
   parent: ClearPDA
+  id: PrisonerPDA # This mostly just exists for the sake of the chameleon UI giving a clear PDA with a prisoner ID
+  suffix: Prisoner
+  components:
+  - type: Pda
+    id: PrisonerIDCard
+
+- type: entity
+  parent: ClearPDA
   id: VisitorPDA
+  suffix: Visitor
   components:
   - type: Pda
     id: VisitorIDCard
@@ -1764,6 +1779,14 @@
     id: AgentIDCard
 
 - type: entity
+  parent: PassengerPDA
+  id: SyndiCovertPDA
+  suffix: Adaptive
+  components:
+  - type: Pda
+    id: SyndicateIDCardAdaptivePassenger
+
+- type: entity
   parent: BaseWidePDA
   id: WizardPDA
   name: wizard PDA
@@ -1790,6 +1813,7 @@
 - type: entity
   parent: ClearPDA
   id: ScurretPDA
+  suffix: Scurret
   description: A temporary PDA granted to scurret temps. Doesn't do much. Wawa!
   components:
   - type: Pda

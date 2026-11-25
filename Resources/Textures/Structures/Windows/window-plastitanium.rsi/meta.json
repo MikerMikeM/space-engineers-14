@@ -1,7 +1,7 @@
-{
+﻿{
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub).",
+    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/0b906c6916ce3803473fa6caa65f5b8661118c46, transparency tweaked by Ubaser.",
     "size": {
         "x": 32,
         "y": 32
@@ -11,35 +11,35 @@
             "name": "full"
         },
         {
-            "name": "ptwindow0",
+            "name": "window0",
             "directions": 4
         },
         {
-            "name": "ptwindow1",
+            "name": "window1",
             "directions": 4
         },
         {
-            "name": "ptwindow2",
+            "name": "window2",
             "directions": 4
         },
         {
-            "name": "ptwindow3",
+            "name": "window3",
             "directions": 4
         },
         {
-            "name": "ptwindow4",
+            "name": "window4",
             "directions": 4
         },
         {
-            "name": "ptwindow5",
+            "name": "window5",
             "directions": 4
         },
         {
-            "name": "ptwindow6",
+            "name": "window6",
             "directions": 4
         },
         {
-            "name": "ptwindow7",
+            "name": "window7",
             "directions": 4
         }
     ]

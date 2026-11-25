@@ -13,10 +13,11 @@
     noRot: true
   - type: IconSmooth
     key: stone
-    additionalKeys:
-    - doors
-    index: 0
-    base: stone
+    states:
+    - !type:EdgeSpriteSmoothing # _SE
+      mask: [ stone, doors ]
+      base: stone- # _SE
+      #index: 0 # _SE
   - type: Icon
     state: full
   - type: Sprite
@@ -63,6 +64,7 @@
   components:
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: gibtonite_inactive
       sprite: Structures/Walls/stone-ore.rsi
       visible: false
@@ -128,6 +130,7 @@
     currentOre: OreCoal
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_coal
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -143,6 +146,7 @@
     currentOre: OreGold
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_gold
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -158,6 +162,7 @@
     currentOre: OreDiamond
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_diamond
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -173,6 +178,7 @@
     currentOre: OrePlasma
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_phoron
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -188,6 +194,7 @@
     currentOre: OreSpaceQuartz
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_quartz
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -203,6 +210,7 @@
     currentOre: OreSilver
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_silver
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -218,6 +226,7 @@
     currentOre: OreSteel
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_tin
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -233,6 +242,7 @@
     currentOre: OreUranium
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_uranium
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -248,6 +258,7 @@
     currentOre: OreSalt
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_salt
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -263,6 +274,7 @@
     currentOre: OreArtifactFragment
   - type: Sprite
     layers:
+    - state: full # _SE
     - state: rock_artifact_fragment
       sprite: Structures/Walls/stone-ore.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
@@ -292,6 +304,8 @@
     state: full
   - type: Sprite
     sprite: Structures/Walls/stone.rsi
+    layers: # _SE
+    - state: full # _SE
 
 - type: entity
   parent: [ BaseAsteroidRockVisuals, BaseAsteroidRock, BaseAsteroidDestructible ]
@@ -408,6 +422,8 @@
     state: full
   - type: Sprite
     sprite: Structures/Walls/stone-ironrock.rsi
+    layers: # _SE
+    - state: full # _SE
 
 - type: entity
   parent: [ BaseIronRockVisuals, BaseAsteroidRock, BaseAsteroidDestructible ]
@@ -454,7 +470,7 @@
   id: IronRockArtifactFragment
 
 - type: entity
-  parent: [ BaseRockGibtonite, BaseIronRockVisuals, IronRock ]
+  parent: [ BaseRockGibtonite, BaseIronRockVisuals, BaseAsteroidRock ]
   id: IronRockGibtonite
 
 - type: entity
@@ -489,14 +505,19 @@
       - *SoundStoneBreak
   - type: IconSmooth
     key: stone
-    index: 0
-    base: stone
+    states:
+    - !type:EdgeSpriteSmoothing # _SE
+      mask: [ stone, doors ]
+      base: stone- # _SE
+      #index: 0 # _SE
   - type: Icon
     sprite: Structures/Walls/stone-dirt.rsi
     state: full
   - type: MiningScannerViewable
   - type: Sprite
     sprite: Structures/Walls/stone-dirt.rsi
+    layers: # _SE
+    - state: full # _SE
 
 # Ore veins
 - type: entity

@@ -10,5 +10,14 @@
     sprite: Structures/Windows/exo-resin-borg.rsi
     state: full
   - type: IconSmooth
-    key: walls
-    base: xenoborg
+    key: windows-exo-borg
+    states:
+    # _SE start
+    - !type:CornerSpriteSmoothing
+      mask:
+      - windows-exo-borg
+    # _SE end
+      - walls-exo-borg
+      - grilles
+      - doors
+      base: window

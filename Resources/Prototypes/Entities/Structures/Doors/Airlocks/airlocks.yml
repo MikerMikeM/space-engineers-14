@@ -1,5 +1,15 @@
 - type: entity
   parent: Airlock
+  id: AirlockService
+  suffix: Service
+  components:
+  - type: Wires
+    layoutId: AirlockService
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/service-base.rsi
+
+- type: entity
+  parent: Airlock
   id: AirlockFreezer
   suffix: Freezer
   components:
@@ -154,7 +164,7 @@
 - type: entity
   parent: Airlock
   id: AirlockMaint
-  name: maintenance access
+  suffix: Maintenance
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/airlock-maints.rsi
@@ -170,7 +180,7 @@
 - type: entity
   parent: AirlockCargo
   id: AirlockMining
-  suffix: Mining(Salvage)
+  suffix: Mining
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/cargo-mining.rsi
@@ -190,17 +200,57 @@
 - type: entity
   parent: Airlock
   id: AirlockHatch
-  name: airtight hatch
+  name: airtight hatch # unique airlock that opens in 4 directions
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/airlock-hatch.rsi
+    # _SE start
+    layers:
+    - state: closed
+      map: [ "enum.DoorVisualLayers.Base" ]
+    - state: closed_unlit
+      shader: unshaded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch.rsi
+      map: [ "enum.DoorVisualLayers.BaseUnlit" ]
+      visible: false
+    - state: welded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch.rsi
+      map: [ "enum.WeldableLayers.BaseWelded" ]
+    - state: bolted_unlit
+      shader: unshaded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch.rsi
+      map: [ "enum.DoorVisualLayers.BaseBolted" ]
+    - state: emergency_unlit
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch.rsi
+      map: [ "enum.DoorVisualLayers.BaseEmergencyAccess" ]
+      shader: unshaded
+    - state: panel_open
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch.rsi
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+    - state: electrified_ai
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.HUD" ]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.Sparks" ]
+    - state: sparks
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch.rsi
+      map: [ "enum.DoorVisualLayers.BaseEmagging" ]
+      shader: unshaded
+      visible: false
+    # _SE end
   - type: Paintable
     group: null
 
 - type: entity
   parent: Airlock
   id: AirlockXenoborg
-  name: mechadermis airlock
+  name: mechadermis airlock # unique airlock you can't make
+  suffix: Xenoborg
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/exo-xenoborg.rsi
@@ -213,7 +263,7 @@
       map: ["enum.DoorVisualLayers.BaseUnlit"]
       visible: true
     - state: welded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo-xenoborg.rsi # _SE
       map: ["enum.WeldableLayers.BaseWelded"]
     - state: bolted_unlit
       shader: unshaded
@@ -224,7 +274,7 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
     - state: panel_open
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo-xenoborg.rsi # _SE
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
@@ -237,7 +287,7 @@
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
     - state: sparks
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo-xenoborg.rsi # _SE
       map: ["enum.DoorVisualLayers.BaseEmagging"]
       shader: unshaded
       visible: false
@@ -245,9 +295,9 @@
     group: null
 
 - type: entity
-  parent: Airlock
+  parent: AirlockHatch # parenting to hatch for the name
   id: AirlockHatchMaintenance
-  name: maintenance hatch
+  suffix: Maintenance
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/airlock-hatch-maints.rsi
@@ -255,13 +305,51 @@
     group: null
 
 - type: entity
-  parent: Airlock
+  parent: AirlockHatch
   id: AirlockHatchSyndicate
-  name: airtight hatch
   suffix: Syndicate
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/airlock-hatch-syndicate.rsi
+    # _SE start
+    layers:
+    - state: closed
+      map: [ "enum.DoorVisualLayers.Base" ]
+    - state: closed_unlit
+      shader: unshaded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch-syndicate.rsi
+      map: [ "enum.DoorVisualLayers.BaseUnlit" ]
+      visible: false
+    - state: welded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch-syndicate.rsi
+      map: [ "enum.WeldableLayers.BaseWelded" ]
+    - state: bolted_unlit
+      shader: unshaded
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch-syndicate.rsi
+      map: [ "enum.DoorVisualLayers.BaseBolted" ]
+    - state: emergency_unlit
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch-syndicate.rsi
+      map: [ "enum.DoorVisualLayers.BaseEmergencyAccess" ]
+      shader: unshaded
+    - state: panel_open
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch-syndicate.rsi
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+    - state: electrified_ai
+      sprite: Interface/Misc/ai_hud.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.HUD" ]
+    - state: electrified
+      sprite: Effects/electricity.rsi
+      shader: unshaded
+      visible: false
+      map: [ "enum.ElectrifiedLayers.Sparks" ]
+    - state: sparks
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-hatch-syndicate.rsi
+      map: [ "enum.DoorVisualLayers.BaseEmagging" ]
+      shader: unshaded
+      visible: false
+    # _SE end
 
 # Glass
 - type: entity
@@ -389,7 +477,7 @@
 - type: entity
   parent: AirlockCargoGlass
   id: AirlockMiningGlass
-  suffix: Mining(Salvage)
+  suffix: Mining
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/cargo-mining.rsi
@@ -399,24 +487,16 @@
 - type: entity
   parent: AirlockCommandGlass # see standard
   id: AirlockCentralCommandGlass
-  suffix: Central Command
+  suffix: CentralCommand
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/centcomm-base.rsi
 
 - type: entity
-  parent: AirlockGlass
-  id: AirlockStandardGlass
-  suffix: Service
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/airlock-base.rsi
-
-- type: entity
   parent: Airlock
   id: AirlockXeno
   suffix: Exo
-  name: exodermis airlock
+  name: exodermis airlock # unique airlock you can't make
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/exo-base.rsi
@@ -440,7 +520,7 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
     - state: panel_open
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo.rsi # _SE
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
@@ -453,7 +533,7 @@
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
     - state: sparks
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo.rsi # _SE
       map: ["enum.DoorVisualLayers.BaseEmagging"]
       shader: unshaded
       visible: false
@@ -488,7 +568,7 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
     - state: panel_open
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo.rsi # _SE
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
@@ -501,7 +581,7 @@
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
     - state: sparks
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-exo.rsi # _SE
       map: ["enum.DoorVisualLayers.BaseEmagging"]
       shader: unshaded
       visible: false

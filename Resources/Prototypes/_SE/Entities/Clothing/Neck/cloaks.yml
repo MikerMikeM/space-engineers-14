@@ -1,0 +1,49 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakCentcomFormal
+  name: formal aristocratic green cloak
+  description: It has lain under piles of paperwork for so long that it is soaked through with the smell of ink.
+  suffix: Central Command, Formal
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Cloaks/centcomcloakformal.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckCloakCapFormalAlt
+  name: formal royal blue cloak
+  description: A cloak that grants boundless power and authority.
+  suffix: Captain, Formal
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Cloaks/capcloakformal.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckCloakHosFormal
+  name: formal austere cloak
+  description: The owner of this cloak is the last person you would want to upset.
+  suffix: Head of Security, Formal
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Cloaks/hoscloakformal.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckCloakCeFormal
+  name: formal blue-black cloak
+  description: Clearly, this cloak is not white and gold at all.
+  suffix: Chief Engineer, Formal
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Cloaks/ce.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakLeadEngineer
+  name: electrified cloak
+  description: It has heard basic engineering explained so many times that it is ready to become a full-fledged worker itself.
+  suffix: Lead Engineer
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Cloaks/le.rsi

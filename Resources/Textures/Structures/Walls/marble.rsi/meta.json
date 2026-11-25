@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub).",
+    "copyright": "author discord by: prazat911",
     "size": {
         "x": 32,
         "y": 32
@@ -40,38 +40,6 @@
         },
         {
             "name": "wall7",
-            "directions": 4
-        },
-        {
-            "name": "wall-border0",
-            "directions": 4
-        },
-        {
-            "name": "wall-border1",
-            "directions": 4
-        },
-        {
-            "name": "wall-border2",
-            "directions": 4
-        },
-        {
-            "name": "wall-border3",
-            "directions": 4
-        },
-        {
-            "name": "wall-border4",
-            "directions": 4
-        },
-        {
-            "name": "wall-border5",
-            "directions": 4
-        },
-        {
-            "name": "wall-border6",
-            "directions": 4
-        },
-        {
-            "name": "wall-border7",
             "directions": 4
         }
     ]

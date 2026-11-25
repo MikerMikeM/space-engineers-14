@@ -90,9 +90,8 @@ public sealed class SprayPainterBoundUserInterface(EntityUid owner, Enum uiKey) 
         SendPredictedMessage(new SprayPainterSetPaintableStyleMessage(group, style));
     }
 
-    private void OnSetPipeColor(ItemList.ItemListSelectedEventArgs args)
+    private void OnSetPipeColor(string key)
     {
-        var key = _window?.IndexToColorKey(args.ItemIndex);
         SendPredictedMessage(new SprayPainterSetPipeColorMessage(key));
     }
 

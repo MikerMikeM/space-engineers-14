@@ -1,7 +1,7 @@
-{
+﻿{
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub).",
+    "copyright": "resprited by AsikKEsel | Original source: from vgstation at commit https://github.com/vgstation-coders/vgstation13/raw/99cc2ab62d65a3a7b554dc7b21ff5f57c835f973/icons/turf/walls.dmi and modified by Swept, transparency tweaked by Ubaser.",
     "size": {
         "x": 32,
         "y": 32
@@ -11,35 +11,35 @@
             "name": "full"
         },
         {
-            "name": "ruwindow0",
+            "name": "window0",
             "directions": 4
         },
         {
-            "name": "ruwindow1",
+            "name": "window1",
             "directions": 4
         },
         {
-            "name": "ruwindow2",
+            "name": "window2",
             "directions": 4
         },
         {
-            "name": "ruwindow3",
+            "name": "window3",
             "directions": 4
         },
         {
-            "name": "ruwindow4",
+            "name": "window4",
             "directions": 4
         },
         {
-            "name": "ruwindow5",
+            "name": "window5",
             "directions": 4
         },
         {
-            "name": "ruwindow6",
+            "name": "window6",
             "directions": 4
         },
         {
-            "name": "ruwindow7",
+            "name": "window7",
             "directions": 4
         }
     ]

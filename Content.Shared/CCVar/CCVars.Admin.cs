@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 using Content.Shared.Administration;
 using Content.Shared.CCVar.CVarAccess;
@@ -111,7 +111,7 @@ public sealed partial class CCVars
     ///     Minimum explosion intensity to create an admin alert message. -1 to disable the alert.
     /// </summary>
     public static readonly CVarDef<int> AdminAlertExplosionMinIntensity =
-        CVarDef.Create("admin.alert.explosion_min_intensity", -1, CVar.SERVERONLY);
+        CVarDef.Create("admin.alert.explosion_min_intensity", -1, CVar.SERVERONLY); // _SE: 60 < -1
 
     /// <summary>
     ///     Minimum particle accelerator strength to create an admin alert message.

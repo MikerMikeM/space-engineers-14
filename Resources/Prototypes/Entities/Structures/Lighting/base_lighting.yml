@@ -18,11 +18,12 @@
         collection: GlassSmash
   - type: Transform
     anchored: true
+  - type: Pullable
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
     drawdepth: WallMountedItems
-    offset: 0, 1
+    #offset: 0, 1 # _SE
     layers:
     - map: ["enum.PoweredLightLayers.Base"]
       state: base
@@ -110,7 +111,7 @@
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/Lighting/light-tube.rsi
-    offset: 0, 1
+    #offset: 0, 1 # _SE
     state: empty
   - type: PointLight
     enabled: false
@@ -125,7 +126,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: SmartLight
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 200
   - type: DeviceLinkSink
     ports:
@@ -317,12 +318,13 @@
       light_bulb: !type:ContainerSlot
   - type: PoweredLight
     bulb: Bulb
+  - type: SpookyPoweredLight
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: SmartLight
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 200
   - type: Appearance
   - type: PoweredLightVisuals
@@ -442,7 +444,7 @@
     speed: 40
   - type: Sprite
     sprite: Structures/Wallmounts/Lighting/emergency-light.rsi
-    offset: 0, 1
+    #offset: 0, 1 # _SE
     layers:
     - state: base
       map: [ "enum.EmergencyLightVisualLayers.Base" ]

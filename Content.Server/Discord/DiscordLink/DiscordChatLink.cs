@@ -1,4 +1,4 @@
-﻿using Content.Server.Chat.Managers;
+using Content.Server.Chat.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using NetCord;
@@ -20,8 +20,8 @@ public sealed partial class DiscordChatLink : IPostInjectInit
 
     private ulong? _oocChannelId;
     private ulong? _adminChannelId;
-    private ulong? _loocChannelId;
-    private ulong? _deadChannelId;
+    private ulong? _loocChannelId; // _SE
+    private ulong? _deadChannelId; // _SE
 
     public void Initialize()
     {
@@ -33,8 +33,8 @@ public sealed partial class DiscordChatLink : IPostInjectInit
 
         _configurationManager.OnValueChanged(CCVars.OocDiscordChannelId, OnOocChannelIdChanged, true);
         _configurationManager.OnValueChanged(CCVars.AdminChatDiscordChannelId, OnAdminChannelIdChanged, true);
-        _configurationManager.OnValueChanged(CCVars.LoocDiscordChannelId, OnLoocChannelIdChanged, true);
-        _configurationManager.OnValueChanged(CCVars.DeadDiscordChannelId, OnDeadChannelIdChanged, true);
+        _configurationManager.OnValueChanged(CCVars.LoocDiscordChannelId, OnLoocChannelIdChanged, true); // _SE
+        _configurationManager.OnValueChanged(CCVars.DeadDiscordChannelId, OnDeadChannelIdChanged, true); // _SE
     }
 
     public void Shutdown()
@@ -43,8 +43,8 @@ public sealed partial class DiscordChatLink : IPostInjectInit
 
         _configurationManager.UnsubValueChanged(CCVars.OocDiscordChannelId, OnOocChannelIdChanged);
         _configurationManager.UnsubValueChanged(CCVars.AdminChatDiscordChannelId, OnAdminChannelIdChanged);
-        _configurationManager.UnsubValueChanged(CCVars.LoocDiscordChannelId, OnLoocChannelIdChanged);
-        _configurationManager.UnsubValueChanged(CCVars.DeadDiscordChannelId, OnDeadChannelIdChanged);
+        _configurationManager.UnsubValueChanged(CCVars.LoocDiscordChannelId, OnLoocChannelIdChanged); // _SE
+        _configurationManager.UnsubValueChanged(CCVars.DeadDiscordChannelId, OnDeadChannelIdChanged); // _SE
     }
 
     #if DEBUG
@@ -77,19 +77,29 @@ public sealed partial class DiscordChatLink : IPostInjectInit
         _adminChannelId = ulong.Parse(channelId);
     }
 
+    // _SE start
     private void OnLoocChannelIdChanged(string channelId)
     {
         if (string.IsNullOrEmpty(channelId))
-        { _loocChannelId = null; return; }
+        {
+            _loocChannelId = null;
+            return;
+        }
+
         _loocChannelId = ulong.Parse(channelId);
     }
 
     private void OnDeadChannelIdChanged(string channelId)
     {
         if (string.IsNullOrEmpty(channelId))
-        { _deadChannelId = null; return; }
+        {
+            _deadChannelId = null;
+            return;
+        }
+
         _deadChannelId = ulong.Parse(channelId);
     }
+    // _SE end
 
     private void OnMessageReceived(Message message)
     {
@@ -114,8 +124,8 @@ public sealed partial class DiscordChatLink : IPostInjectInit
         {
             ChatChannel.OOC => _oocChannelId,
             ChatChannel.AdminChat => _adminChannelId,
-            ChatChannel.LOOC => _loocChannelId,
-            ChatChannel.Dead => _deadChannelId,
+            ChatChannel.LOOC => _loocChannelId, // _SE
+            ChatChannel.Dead => _deadChannelId, // _SE
             _ => throw new InvalidOperationException("Channel not linked to Discord."),
         };
 

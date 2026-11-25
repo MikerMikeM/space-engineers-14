@@ -7,16 +7,17 @@
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/tech_disk_printer.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: icon
-    - map: ["computerLayerScreen"]
-      state: unshaded
+  - type: ComputerVisuals
+    stateFrame: icon
+    stateKeyboard: null
+    stateScreen: unshaded
+    stateKeys: null
+    statePanel: panel
   # ADT-Tweak start
   - type: GenericVisualizer
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
-        computerLayerBody:
+        enum.ComputerVisualLayers.Frame:
           None: { state: icon, sprite: Structures/Machines/tech_disk_printer.rsi }
           East: { state: icon, sprite: Structures/Machines/tech_disk_printer.rsi }
           West: { state: icon, sprite: Structures/Machines/tech_disk_printer.rsi }

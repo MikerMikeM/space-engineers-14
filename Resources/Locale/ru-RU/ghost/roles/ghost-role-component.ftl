@@ -104,6 +104,8 @@ ghost-role-information-salvage-carp-description = Защищайте ценно�
 ghost-role-information-sentient-carp-name = Разумный карп
 ghost-role-information-sentient-carp-description = Помогите дракону наводнить станцию карпами!
 
+ghost-role-information-sentient-sharkminnow-name = Разумная карпоакула
+
 ghost-role-information-willow-name = Кенгуру Уиллоу
 ghost-role-information-willow-description = Вы кенгуру по имени Уиллоу! Уиллоу любит бокс.
 
@@ -218,13 +220,13 @@ ghost-role-information-space-ninja-name = Космический ниндзя
 ghost-role-information-space-ninja-description = Используйте хитрость и скрытность, чтобы устроить диверсию на станции.
 
 ghost-role-information-paradox-clone-name = Парадоксальный клон
-ghost-role-information-paradox-clone-description = Странная пространственно-временная аномалия телепортировала вас в другую реальность! Теперь вам предстоит найти своего двойника, убить и заменить его.
+ghost-role-information-paradox-clone-description = Странная пространственно-временная аномалия забросила вас в другую реальность! Убейте свою местную версию и займите её место.
 
 ghost-role-information-syndicate-reinforcement-name = Агент Синдиката
 ghost-role-information-syndicate-reinforcement-description = Кому-то нужно подкрепление. Вы первый, кого Синдикат смог найти и послать на помощь.
 ghost-role-information-syndicate-reinforcement-rules = Вы [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color], в команде с агентом, который вас призвал.
 
-ghost-role-information-syndicate-reinforcement-medic-name = Медик Синдиката
+ghost-role-information-syndicate-reinforcement-medic-name = Боевой медик Синдиката
 ghost-role-information-syndicate-reinforcement-medic-description = Кому-то нужно подкрепление. Ваша задача — сохранить жизнь вызвавшему вас агенту.
 
 ghost-role-information-syndicate-reinforcement-spy-name = Шпион Синдиката
@@ -346,7 +348,10 @@ ghost-role-information-xenoborg-name = Ксеноборг
 ghost-role-information-xenoborg-desc = Странный киборг, сделанный, чтобы воспроизводить себя и захватывать станцию, превращая любое разумное существо в ксеноборга.
 
 ghost-role-information-wizard-name = Волшебник
-ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажи станции, из чего сделана твоя магия.
+ghost-role-information-wizard-desc = Вы член Федерации космических волшебников, отправленный сюда, чтобы заставить станцию ​​содрогнуться перед вашей магической мощью.
 
 ghost-role-information-emotional-support-scurret-name = Слизенёк эмоциональной поддержки
 ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, будьте очаровательными, часто говорите "ва".
+
+ghost-role-information-space-changeling-name = Древний мозговой червь
+ghost-role-information-space-changeling-description = Взрослая особь мозгового червя генокрада, стремящаяся ассимилировать членов экипажа и скрываться в недрах станции. Этот мозговой червь особенно уязвим и нуждается в трупе, чтобы принять гуманоидный облик.

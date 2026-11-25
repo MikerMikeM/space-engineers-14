@@ -89,6 +89,18 @@ entity-condition-guidebook-breathing =
 
 entity-condition-guidebook-internals =
     цель { $usingInternals ->
-        [true] использует балон
+        [true] использует баллон
         *[false] дышит атмосферой
+    }
+
+entity-condition-guidebook-mouth-uncovered-condition =
+    у существа не прикрыт рот
+
+entity-condition-guidebook-bloodlevel =
+    { $max ->
+        [2147483648] уровень крови у цели как минимум {NATURALFIXED($min, 2)}%
+        *[other] { $min ->
+                    [0] уровень крови у цели в сумме не более {NATURALFIXED($max, 2)}%
+                    *[other] уровень крови у цели в диапазоне {NATURALFIXED($min, 2)}% и {NATURALFIXED($max, 2)}%
+                 }
     }

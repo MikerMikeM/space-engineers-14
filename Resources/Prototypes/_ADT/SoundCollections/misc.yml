@@ -2,7 +2,6 @@
 - type: soundCollection
   id: ADTShowerMid
   files:
-  - /Audio/ADT/Effects/shower_mid1.ogg
-  - /Audio/ADT/Effects/shower_mid2.ogg
-  - /Audio/ADT/Effects/shower_mid3.ogg
-
+  - /Audio/_ADT/Effects/shower_mid1.ogg # _SE
+  - /Audio/_ADT/Effects/shower_mid2.ogg # _SE
+  - /Audio/_ADT/Effects/shower_mid3.ogg # _SE

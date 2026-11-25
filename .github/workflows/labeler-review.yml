@@ -1,52 +1,23 @@
 name: "Labels: Approved"
 on:
   pull_request_review:
-    types: [submitted, dismissed]
-
-permissions:
-  contents: read
-  pull-requests: write
-
+    types: [submitted]
 jobs:
-  approved-label:
-    if: github.repository == 'KiraFaust/space-engineers-14'
+  add_label:
+    # Change the repository name after you've made sure the team name is correct for your fork!
+    if: ${{ (github.repository == 'KiraFaust/space-engineers-14') && (github.event.review.state == 'APPROVED') }} # _SE
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - name: Check team membership
-        id: checkUserMember
-        uses: tspascoal/get-user-teams-membership@v3
-        with:
-          username: ${{ github.actor }}
-          team: "content-maintainers,junior-maintainers"
-          GITHUB_TOKEN: ${{ secrets.LABELER_PAT }}
-
-      - name: Add S: Approved
-        if: |
-          github.event.action == 'submitted' &&
-          github.event.review.state == 'APPROVED' &&
-          steps.checkUserMember.outputs.isTeamMember == 'true'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.LABELER_PAT }}
-          script: |
-            await github.rest.issues.addLabels({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              labels: ['S: Approved']
-            })
-
-      - name: Remove S: Approved on dismissal
-        if: |
-          github.event.action == 'dismissed' &&
-          github.event.review.state == 'APPROVED'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.LABELER_PAT }}
-          script: |
-            await github.rest.issues.removeLabel({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              name: 'S: Approved'
-            }).catch(() => {})
+    - uses: tspascoal/get-user-teams-membership@v3
+      id: checkUserMember
+      with:
+        username: ${{ github.actor }}
+        team: "content-maintainers,junior-maintainers"
+        GITHUB_TOKEN: ${{ secrets.LABELER_PAT }}
+    - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
+      uses: actions-ecosystem/action-add-labels@1a9c3715c0037e96b97bb38cb4c4b56a1f1d4871 # _SE
+      with:
+        labels: "S: Approved"

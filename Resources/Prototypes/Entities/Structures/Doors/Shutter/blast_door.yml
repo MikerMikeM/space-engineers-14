@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: [ BaseShutter, StructureHealthDoorStrong ]
   id: BlastDoor
   name: blast door
@@ -12,7 +12,7 @@
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      #sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi # _SE
       map: ["enum.WeldableLayers.BaseWelded"]
   - type: Door
     closeTimeOne: 0.4
@@ -60,8 +60,7 @@
     interactSuccessSound:
       path: /Audio/Effects/glass_knock.ogg
   - type: IconSmooth
-    key: walls
-    mode: NoSprite
+    key: doors
   - type: PlacementReplacement
     key: blastdoors
 
@@ -134,7 +133,7 @@
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      #sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi # _SE
       map: ["enum.WeldableLayers.BaseWelded"]
   - type: Door
     closeTimeOne: 0.4
@@ -186,7 +185,7 @@
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      #sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi # _SE
       map: ["enum.WeldableLayers.BaseWelded"]
       visible: true
   - type: Door

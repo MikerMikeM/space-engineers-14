@@ -1,5 +1,0 @@
-- type: tile
-  id: OldLattice
-  parent: Lattice
-  sprite: /Textures/_SE/Tiles/lattice.png
-  variants: 1

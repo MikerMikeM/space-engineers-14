@@ -1,4 +1,4 @@
-{
+﻿{
     "version": 1,
     "license": "CC-BY-SA-3.0",
     "copyright": "Taken from Tgstation https://github.com/tgstation/tgstation/commit/f72bc7781be5198ee9c8475267d32cb4dbb07286",
@@ -8,8 +8,7 @@
     },
     "states": [
         {
-            "name": "plasticflaps",
-            "directions": 4
+            "name": "plasticflaps"
         }
     ]
 }

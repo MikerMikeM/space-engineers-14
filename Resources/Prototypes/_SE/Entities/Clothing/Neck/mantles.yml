@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleCapAlt
+  name: formal royal blue mantle
+  description: You can feel this mantle radiating power and authority.
+  suffix: Captain, Formal
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Mantles/capmantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseSecurityContraband]
+  id: ClothingNeckMantleWarden
+  name: black and red army mantle
+  description: This mantle has never left the walls of its department.
+  suffix: Warden
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Mantles/wardenmantle.rsi

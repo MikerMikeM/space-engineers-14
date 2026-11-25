@@ -459,7 +459,12 @@
         acts: [ "Destruction" ]
   - type: IconSmooth
     key: metaltable
-    base: state_
+    # _SE start
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ metaltable ]
+      base: state_
+    # _SE end
 
 
 - type: entity
@@ -504,10 +509,15 @@
         acts: [ "Destruction" ]
   - type: IconSmooth
     key: plastictable
+    # _SE start
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ plastictable ]
+      base: state_
+    # _SE end
   - type: Construction
     graph: ADTTable
     node: adttableplastic
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepTile
-

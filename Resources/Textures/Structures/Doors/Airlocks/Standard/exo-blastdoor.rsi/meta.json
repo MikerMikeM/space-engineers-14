@@ -1,123 +1,49 @@
-{
+﻿{
     "version": 1,
-    "license": "CC-BY-SA-4.0",
-    "copyright": "By AftrLite",
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by SlamBamActionman (github), welded taken from skyrat-tg at commit https://github.com/Skyrat-SS13/Skyrat-tg/commit/f9e3b58ecd64fa061f83420689bd90bfa3a4c185",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "assembly",
-            "directions": 4
-        },
-        {
-            "name": "opening",
-            "directions": 4,
-            "delays": [
-                [
-                    0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
-                ]
-            ]
-        },
-        {
-            "name": "closed",
-            "directions": 4
-        },
-        {
-            "name": "open",
-            "directions": 4
+            "name": "assembly"
         },
         {
             "name": "closing",
-            "directions": 4,
             "delays": [
                 [
                     0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
-                ],
-                [
                     0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.03,
-                    0.03,
-                    0.05,
-                    0.05,
-                    0.1
+                    0.07,
+                    0.43
                 ]
             ]
+        },
+        {
+            "name": "opening",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.07,
+                    0.07,
+                    0.46
+                ]
+            ]
+        },
+        {
+            "name": "open"
+        },
+        {
+            "name": "closed"
+        },
+        {
+            "name": "welded"
         }
     ]
 }

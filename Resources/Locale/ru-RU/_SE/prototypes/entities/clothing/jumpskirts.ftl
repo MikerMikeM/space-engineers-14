@@ -33,3 +33,7 @@ ent-ClothingUniformJumpskirtHopFormal = синяя униформа с бело�
 ent-ClothingUniformJumpskirtCaptainOfficer = королевско-синяя офицерская униформа с юбкой
     .desc = Очень удобная и круто выглядит.
     .suffix = Капитан, Повседневная
+
+ent-ClothingUniformJumpskirtFeldsher = голубой военный медицинский костюм с юбкой
+    .desc = Абсолютно чистый и стерильный военно-медицинский костюм с крестом на спине.
+    .suffix = Фельдшер

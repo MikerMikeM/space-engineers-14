@@ -1,7 +1,7 @@
 - type: entity
   parent: AirlockRCDResistant
   id: AirlockExternal
-  suffix: External
+  name: external airlock # unique airlock you can't make
   description: It opens, it closes, it might crush you, and there might be only space behind it.
   components:
   - type: Door
@@ -36,7 +36,7 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
     - state: panel_open
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-external.rsi # _SE
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - state: electrified_ai
       sprite: Interface/Misc/ai_hud.rsi
@@ -49,7 +49,7 @@
       visible: false
       map: ["enum.ElectrifiedLayers.Sparks"]
     - state: sparks
-      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-external.rsi # _SE
       map: ["enum.DoorVisualLayers.BaseEmagging"]
       shader: unshaded
       visible: false
@@ -61,7 +61,7 @@
 - type: entity
   parent: AirlockExternal
   id: AirlockExternalGlass
-  suffix: Glass, External
+  name: external glass airlock
   components:
   - type: Door
     occludes: false

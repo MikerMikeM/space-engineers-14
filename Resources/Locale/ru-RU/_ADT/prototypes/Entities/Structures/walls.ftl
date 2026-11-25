@@ -1,6 +1,3 @@
-ent-ADTwallmarble = мраморная стена
-    .desc = Держит воздух внутри, а пассажиров снаружи.
-
 ent-MetalElevation = возвышенность
     .desc = Техническая возвышенность.
 ent-MetalElevationCorner = { ent-MetalElevation }

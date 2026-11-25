@@ -150,6 +150,7 @@
   - ChaplainJumpsuit
   - CommonBackpack
   - ChaplainOuterClothing
+  - ChaplainShoes
   - ChaplainBible
   - Glasses
   - AssistiveItems
@@ -532,6 +533,7 @@
   - TramDriverHat
   - TramDriverGloves
   - Glasses
+  - AssistiveItems
   - Survival
   - Trinkets
   #- TramDriverJobTrinkets

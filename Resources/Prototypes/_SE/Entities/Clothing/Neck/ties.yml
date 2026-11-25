@@ -1,0 +1,158 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieAquamarine
+  name: aquamarine tie
+  description: An aquamarine tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/aquamarine_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieAzure
+  name: azure tie
+  description: An azure-colored tie. The sea... and on the sea, land... and on the land, a palm tree... and on the palm tree, a cat sits and sees the sea... and on the sea, land...
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/azure_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieBlue
+  name: blue tie
+  description: A blue tie. A golden clip with a heavily worn AEgis LLC logo is attached to it.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/blue_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieBrown
+  name: brown tie
+  description: A dark brown tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/brown_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieGolden
+  name: golden tie
+  description: A golden tie. Luxurious and shining.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/gold_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieLightGrey
+  name: light grey tie
+  description: A light grey tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/grey_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieOrange
+  name: orange tie
+  description: An orange-colored tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/orange_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTiePink
+  name: pink tie
+  description: A marshmallow-colored tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/pink_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTiePurple
+  name: purple tie
+  description: A purple tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/purple_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieRedSilk
+  name: red silk tie
+  description: A tie woven from red silk.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/red_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieWhite
+  name: white tie
+  description: This was our main goal all along. It is VERY white.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/white_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieYellow
+  name: yellow tie
+  description: A yellow-colored tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/yellow_tie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieObscure
+  name: dark tie
+  description: A very dark tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/blacktie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieDarkPurple
+  name: dark purple tie
+  description: A Deep Purple tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/bluetie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieDarkBrown
+  name: dark brown tie
+  description: A dark brown tie.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/browntie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieGreen
+  name: green tie
+  description: A green tie. Touch grass!
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/greentie.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieChemist
+  name: chemist's tie
+  description: An orange a day keeps the chemist out of the clinic. Just don't brew up the wrong thing...
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Ties/chemtie.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon

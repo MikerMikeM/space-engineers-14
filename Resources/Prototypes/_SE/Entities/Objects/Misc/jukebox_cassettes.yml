@@ -27,7 +27,7 @@
     - Constellations
     - Drifting
     - starlight
-    - sunset
+    #- sunset
 
 - type: entity
   parent: JukeboxCassetteBase

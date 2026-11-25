@@ -6,28 +6,22 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client.Doors;
 
+/// <inheritdoc/>
 public sealed partial class DoorSystem : SharedDoorSystem
 {
     [Dependency] private AnimationPlayerSystem _animationSystem = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<DoorComponent, AppearanceChangeEvent>(OnAppearanceChange);
-        SubscribeLocalEvent<DoorComponent, AnimationCompletedEvent>(OnAnimationCompleted);
-    }
-
+    /// <inheritdoc/>
     protected override void OnComponentInit(Entity<DoorComponent> ent, ref ComponentInit args)
     {
-        base.OnComponentInit(ent, ref args);
-
+        // Base call deferred until end of function.
         var comp = ent.Comp;
 
         var hasColor = _sprite.TryGetLayer(ent.Owner, DoorVisualLayers.BaseColor, out _, false); // _SE
 
-        comp.OpenSpriteStates = new List<(Enum, string)>(hasColor ? 2 : 1); // _SE
-        comp.ClosedSpriteStates = new List<(Enum, string)>(hasColor ? 2 : 1); // _SE
+        comp.OpenSpriteStates = new(hasColor ? 2 : 1); // _SE
+        comp.ClosedSpriteStates = new(hasColor ? 2 : 1); // _SE
 
         comp.OpenSpriteStates.Add((DoorVisualLayers.Base, comp.OpenSpriteState));
         comp.ClosedSpriteStates.Add((DoorVisualLayers.Base, comp.ClosedSpriteState));
@@ -39,7 +33,8 @@ public sealed partial class DoorSystem : SharedDoorSystem
             comp.ClosedSpriteStates.Add((DoorVisualLayers.BaseColor, comp.ClosedColorSpriteState));
         }
         // _SE end
-        var openingAnim = new Animation
+
+        var openingAnim = new Animation // _SE
         {
             Length = comp.OpeningAnimationTime,
             AnimationTracks =
@@ -70,8 +65,8 @@ public sealed partial class DoorSystem : SharedDoorSystem
                 },
             },
         };
-        // _SE start
 
+        // _SE start
         if (hasColor)
         {
             openingAnim.AnimationTracks.Add(new AnimationTrackSpriteFlick
@@ -112,8 +107,11 @@ public sealed partial class DoorSystem : SharedDoorSystem
                 },
             },
         };
+
+        base.OnComponentInit(ent, ref args);
     }
 
+    [SubscribeLocalEvent]
     private void OnAnimationCompleted(Entity<DoorComponent> ent, ref AnimationCompletedEvent args)
     {
         if (args.Key != DoorComponent.OpenKey && args.Key != DoorComponent.CloseKey)
@@ -125,6 +123,7 @@ public sealed partial class DoorSystem : SharedDoorSystem
         switch (ent.Comp.State)
         {
             case DoorState.Open:
+
                 foreach (var (layer, layerState) in ent.Comp.OpenSpriteStates)
                 {
                     if (!_sprite.TryGetLayer(ent.Owner, layer, out _, false)) // _SE
@@ -135,6 +134,7 @@ public sealed partial class DoorSystem : SharedDoorSystem
 
                 break;
             case DoorState.Closed:
+
                 foreach (var (layer, layerState) in ent.Comp.ClosedSpriteStates)
                 {
                     if (!_sprite.TryGetLayer(ent.Owner, layer, out _, false)) // _SE
@@ -147,20 +147,20 @@ public sealed partial class DoorSystem : SharedDoorSystem
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnAppearanceChange(Entity<DoorComponent> entity, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)
             return;
 
-        if (!AppearanceSystem.TryGetData<DoorState>(entity, DoorVisuals.State, out var state, args.Component))
+        if (!args.TryGetData<DoorState>(DoorVisuals.State, out var state))
             state = DoorState.Closed;
 
-        if (AppearanceSystem.TryGetData<string>(entity, PaintableVisuals.Prototype, out var prototype, args.Component))
+        if (args.TryGetData<string>(PaintableVisuals.Prototype, out var prototype))
             UpdateSpriteLayers((entity.Owner, args.Sprite), prototype);
 
-        // We are checking beforehand since some doors may not have an emagging visual layer, and we don't want LayerSetVisible to throw an error.
-        if (_sprite.TryGetLayer(entity.Owner, DoorVisualLayers.BaseEmagging, out var _, false))
-            _sprite.LayerSetVisible(entity.Owner, DoorVisualLayers.BaseEmagging, state == DoorState.Emagging);
+        if (_sprite.LayerMapTryGet(entity.Owner, DoorVisualLayers.BaseEmagging, out var emaggingLayer, logMissing: false))
+            _sprite.LayerSetVisible(entity.Owner, emaggingLayer, state == DoorState.Emagging);
 
         UpdateAppearanceForDoorState(entity, args.Sprite, state);
     }

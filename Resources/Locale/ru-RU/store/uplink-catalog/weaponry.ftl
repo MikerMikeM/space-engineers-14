@@ -37,10 +37,10 @@ uplink-sniper-bundle-name = Набор снайпера
 uplink-sniper-bundle-desc = Неприметный чемодан, в котором находятся Христов, 10 запасных патронов и удобная маскировка. Полезен для проведения операций по проникновению или совершению покушений, при условии, что владелец обладает достаточным мастерством.
 
 uplink-hushpup-name = Глухарь
-uplink-hushpup-desc = Мощное бесшумное ружье с малой емкостью магазина. Использует патроны калибра .50 ружейные.
+uplink-hushpup-desc = Мощное бесшумное ружьё с малой ёмкостью магазина. Использует патроны калибра .50 ружейные.
 
 uplink-c20r-name = C-20r
-uplink-c20r-desc = Старый добрый, классический пистолет-пулемет C-20r.
+uplink-c20r-desc = Старый добрый, классический пистолет-пулемёт C-20r.
 
 uplink-c20r-bundle-name = Набор "C-20r"
 uplink-c20r-bundle-desc = Старый добрый: Классический пистолет-пулемёт C-20r в комплекте с тремя магазинами.
@@ -54,11 +54,11 @@ uplink-bulldog-bundle-desc = Компактный и мощный, содерж�
 uplink-estoc-bundle-name = Набор "Марксманская винтовка Эсток"
 uplink-estoc-bundle-desc = Марксманская винтовка Эсток, оснащённая оптическим прицелом среднего приближения, для ведения боя на дальних дистанциях. В комплекте с тремя магазинами патронов калибра .20 винтовочные.
 
-uplink-grenade-launcher-name = China-Lake
-uplink-grenade-launcher-desc = Старый гранатомёт China-Lake снабжённый 5 осколочными снарядами.
+uplink-grenade-launcher-name = China Lake
+uplink-grenade-launcher-desc = Старый гранатомёт China Lake снабжённый 5 осколочными снарядами.
 
-uplink-grenade-launcher-bundle-name = Набор "China-Lake"
-uplink-grenade-launcher-bundle-desc = Старый гранатомёт China-Lake, снабжённый 11 гранатами различной поражающей способности.
+uplink-grenade-launcher-bundle-name = Набор "China Lake"
+uplink-grenade-launcher-bundle-desc = Старый гранатомёт China Lake, снабжённый 11 гранатами различной поражающей способности.
 
 uplink-l6-saw-bundle-name = Набор "L6 Saw"
 uplink-l6-saw-bundle-desc = Ещё больше дакки: культовый лёгкий пулемёт L6 в комплекте с 2 коробами патронов.

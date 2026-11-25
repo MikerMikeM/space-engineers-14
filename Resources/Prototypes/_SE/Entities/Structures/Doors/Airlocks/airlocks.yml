@@ -342,6 +342,7 @@
   - type: Sprite
     snapCardinals: false
     offset: 0,0
+  - type: EnlargedAirlock
 
 - type: entity
   id: BigExternalAirlockGlass
@@ -394,6 +395,7 @@
   - type: Sprite
     snapCardinals: false
     offset: 0.5,0
+  - type: EnlargedAirlock
 
 - type: entity
   id: MediumMedicalAirlockGlass

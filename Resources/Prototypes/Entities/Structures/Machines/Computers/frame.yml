@@ -1,3 +1,4 @@
+# _SE start
 - type: entity
   id: BaseStructureComputer
   parent: BaseStructure
@@ -87,7 +88,7 @@
   - type: GenericVisualizer
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
-        computerLayerBody:
+        enum.ComputerVisualLayers.Frame:
           None: { state: broken, sprite: Structures/Machines/computers.rsi }
           West: { state: computer_r-broken, sprite: _ADT/Structures/Machines/computers.rsi }
           East: { state: computer_l-broken, sprite: _ADT/Structures/Machines/computers.rsi }
@@ -117,3 +118,4 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+# _SE end
