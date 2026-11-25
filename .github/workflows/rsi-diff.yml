@@ -12,6 +12,8 @@ concurrency:
 
 jobs:
   diff:
+    permissions: # _SE
+      pull-requests: write # _SE
     name: Diff
     runs-on: ubuntu-latest
     steps:
