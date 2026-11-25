@@ -35,7 +35,7 @@ ent-ClothingUniformJumpsuitAdjutant = классическая белая руб
     .suffix = Адъютант, Торжественный
 
 ent-ClothingUniformJumpsuitAdjutantAlt = синяя водолазка
-    .desc = Синяя униформа, предназначенная для полевых операций. Имеет встроенный ящик для инструментов.
+    .desc = Синяя униформа, предназначенная для полевых операций. Имеет встроенный лечебный ящик для инструментов.
     .suffix = Адъютант
 
 ent-ClothingUniformJumpsuitSalvageSpecialistFormal = синий комбинезон с подтяжками
@@ -54,9 +54,9 @@ ent-ClothingUniformJumpsuitCaptainOfficer = королевско-синяя оф
     .desc = Повседневная униформа для какого-то высокопоставленного офицера. Очень удобная и круто выглядит.
     .suffix = Капитан, Повседневная
 
-ent-ClothingUniformJumpsuitMimicryEGOSuit = костюм Э.П.О.С. "Мимикрия"
+ent-ClothingUniformJumpsuitMimicryEGOSuit = костюм Э.Г.О. "Мимикрия" из плоти
     .desc = Комплект униформы из плоти, источающий угрожающую ауру
 
-ent-ClothingUniformJumpsuitFeldsher = голубой военный медицинский костюм
-    .desc = Абсолютно чистый и стерильный военно-медицинский костюм с крестом на спине.
-    .suffix = Фельдшер
+ent-ClothingUniformJumpsuitSR = зелёно-золотая офицерская форма
+    .desc = Зелёная, золотая и удобная
+    .suffix = Представитель Сектора, Повседневная

@@ -26,15 +26,6 @@
       sprite: _SE/Clothing/Back/Duffels/hop.rsi
 
 - type: entity
-  parent: ClothingBackpack
-  id: ClothingBackpackMessenger
-  name:  messenger
-  description: you are boring and thats fact
-  components:
-    - type: Sprite
-      sprite: _SE/Clothing/Back/Messengers/messenger.rsi
-
-- type: entity
   parent: ClothingBackpackMessenger
   id: ClothingBackpackMessengerAtmospherics
   name: atmospheric messenger

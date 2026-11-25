@@ -34,6 +34,6 @@ ent-ClothingUniformJumpskirtCaptainOfficer = королевско-синяя о�
     .desc = Очень удобная и круто выглядит.
     .suffix = Капитан, Повседневная
 
-ent-ClothingUniformJumpskirtFeldsher = голубой военный медицинский костюм с юбкой
-    .desc = Абсолютно чистый и стерильный военно-медицинский костюм с крестом на спине.
-    .suffix = Фельдшер
+ent-ClothingUniformJumpskirtSR = зелёно-золотая офицерская форма с юбкой
+    .desc = Очень удобная и круто выглядит.
+    .suffix = Представитель Сектора, Повседневная
