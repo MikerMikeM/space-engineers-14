@@ -60,3 +60,7 @@ ent-ClothingUniformJumpsuitMimicryEGOSuit = костюм Э.Г.О. "Мимикр
 ent-ClothingUniformJumpsuitSR = зелёно-золотая офицерская форма
     .desc = Зелёная, золотая и удобная
     .suffix = Представитель Сектора, Повседневная
+
+ent-ClothingUniformJumpsuitFeldsher = голубой военный медицинский костюм
+    .desc = Абсолютно чистый и стерильный военно-медицинский костюм с крестом на спине.
+    .suffix = Фельдшер
