@@ -1,0 +1,13 @@
+- type: entity
+  parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
+  id: ClothingHandsGlovesCombatWhite
+  name: white combat gloves
+  description: These white tactical gloves are fireproof and shock resistant.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Hands/white_combat.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Hands/white_combat.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative

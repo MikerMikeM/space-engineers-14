@@ -1,0 +1,12 @@
+- type: entity
+  parent: [BaseCommandContraband, ClothingOuterArmorBase]
+  id: ClothingOuterArmorSR
+  name: green and golden vest
+  components:
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: Sprite
+    sprite: _SE/Clothing/OuterClothing/sr_carapace.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/OuterClothing/sr_carapace.rsi

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSR
+  name: green and golden shoes
+  description: Green and golden shoes.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Shoes/sr.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Shoes/sr.rsi

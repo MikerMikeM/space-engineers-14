@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
+  id: ClothingNeckCloakSR
+  name: green and golden cloak
+  description: A pompous and comfy green cloak with golden implements.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Cloacks/sr.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Neck/Cloacks/sr.rsi
+
