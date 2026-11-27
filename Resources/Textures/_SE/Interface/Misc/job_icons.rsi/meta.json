@@ -12,6 +12,39 @@
         },
         {
             "name": "feldsher"
+        },
+        {
+            "name": "cburn"
+        },
+        {
+            "name": "cryotech"
+        },
+        {
+            "name": "fighter"
+        },
+        {
+            "name": "navigator"
+        },
+        {
+            "name": "nfsdchief"
+        },
+        {
+            "name": "nfsdcorporal"
+        },
+        {
+            "name": "nfsdlieutenant"
+        },
+        {
+            "name": "nfsdsenior"
+        },
+        {
+            "name": "nfsdservice"
+        },
+        {
+            "name": "nfsdsergeantmajor"
+        },
+        {
+            "name": "sr"
         }
     ]
 }
