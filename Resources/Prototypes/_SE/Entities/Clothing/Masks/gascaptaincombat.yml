@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ClothingMaskGas, BaseCommandContraband]
+  id: ClothingMaskGasCaptainCombat
+  name: captain's combat gasmask
+  description: Captain's gasmask, but for combat.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _SE/Clothing/Masks/gascaptaincombat.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Masks/gascaptaincombat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95

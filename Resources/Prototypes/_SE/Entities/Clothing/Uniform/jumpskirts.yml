@@ -82,3 +82,15 @@
     sprite: _SE/Clothing/Uniform/Jumpskirts/salvageformal.rsi
   - type: Clothing
     sprite: _SE/Clothing/Uniform/Jumpskirts/salvageformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtSR
+  name: sandy green jumpskirt with golden implements
+  description: jumpskirt for high-ranking officers and bureaucrats
+  suffix: Sector representative
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Uniform/Jumpskirts/sr.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Uniform/Jumpskirts/sr.rsi

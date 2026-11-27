@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatSR
+  name: green and golden jacket
+  description: A thick, green-golden jacket.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/OuterClothing/sr_jacket.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/OuterClothing/sr_jacket.rsi

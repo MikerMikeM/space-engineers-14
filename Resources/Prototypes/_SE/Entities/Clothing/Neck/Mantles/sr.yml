@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleSR
+  name: green and golden  mantle
+  description: A formal mantle to drape around the shoulders. Green, also golden.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Neck/Mantles/sr.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Neck/Mantles/sr.rsi

@@ -12,3 +12,25 @@
       head:
         - state: equipped-HELMET
           offset: 0, 0.11
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadCapSR
+  name: golden green cap
+  description: Cap for high-ranking officers and bureaucrats.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Head/Hats/sr_cap.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Head/Hats/sr_cap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBeretSR
+  name: golden green beret
+  description: Beret for high-ranking officers and bureaucrats.
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Head/Hats/sr_beret.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Head/Hats/sr_beret.rsi

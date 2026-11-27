@@ -144,3 +144,16 @@
     sprite: _SE/Clothing/Uniform/Jumpsuits/ce_formal.rsi
   - type: Clothing
     sprite: _SE/Clothing/Uniform/Jumpsuits/ce_formal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSR
+  name: sandy green suit with golden implements
+  description: Jumpsuit for high-ranking officers and bureaucrats
+  suffix: Sector representative
+  components:
+  - type: Sprite
+    sprite: _SE/Clothing/Uniform/Jumpsuits/sr.rsi
+  - type: Clothing
+    sprite: _SE/Clothing/Uniform/Jumpsuits/sr.rsi
+
